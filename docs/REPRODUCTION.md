@@ -28,6 +28,22 @@ python3 scripts/train_agknet/rees46_learned_casp_gate.py \
   --model logistic \
   --feature-set compact \
   --output-dir results/20260508_rees46_learned_casp_gate_logistic_compact
+
+# Reviewer-risk alternate validation summaries use the same held-out test split
+# after rebuilding the val_context_frac=0.6 validation rows.
+python3 scripts/train_agknet/rees46_confidence_calibrated_promotion.py \
+  --input results/20260509_rees46_altval_context060_semantic_confidence/rees46_semantic_confidence_audit_per_user.csv \
+  --output-dir results/20260509_rees46_altval_context060_confidence_calibrated_open070 \
+  --max-validation-ratio 0.0 \
+  --min-validation-net 20 \
+  --max-open-rate 0.70
+
+python3 scripts/train_agknet/rees46_learned_casp_gate.py \
+  --val-rows results/20260509_rees46_altval_context060_list_residual/rees46_stage_p_list_residual_val_rows.csv \
+  --test-rows results/20260509_rees46_altval_context060_list_residual/rees46_stage_p_list_residual_test_rows.csv \
+  --model logistic \
+  --feature-set compact \
+  --output-dir results/20260509_rees46_altval_context060_learned_casp_gate_logistic_compact
 ```
 
 ## Tmall
@@ -51,6 +67,14 @@ python3 scripts/train_agknet/tmall_casp_threshold_sensitivity.py \
   --output-dir results/20260506_tmall_casp_threshold_sensitivity_deterministic \
   --chunksize 1000000 \
   --validation-grid results/20260506_tmall_casp_policy_probe_net50_10_deterministic/tmall_casp_validation_grid.csv
+
+python3 scripts/train_agknet/tmall_casp_policy_probe.py \
+  --input-dir data/tmall \
+  --output-dir results/20260509_tmall_casp_policy_probe_hit50_primary \
+  --chunksize 1000000 \
+  --selection-k 50 \
+  --min-validation-net 10 \
+  --min-validation-net50 10
 ```
 
 ## Synerise

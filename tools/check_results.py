@@ -75,6 +75,35 @@ def check_tmall() -> None:
     if not any(row.get("gate") == "n_cat_brand_le_20" for row in rows):
         raise AssertionError("missing selected Tmall threshold row")
 
+    hit50_path = "results/20260509_tmall_casp_policy_probe_hit50_primary/tmall_casp_policy_summary.json"
+    hit50 = load_json(hit50_path)["selected_test"]
+    assert hit50["policy"] == "cat_brand__sem25__n_cat_brand_le_10"
+    assert hit50["net@50"] == 684
+    assert hit50["net@100"] == 792
+    assert_close(hit50["ratio@100"], 0.011235955056179775)
+
+
+def check_rees46_alt_validation() -> None:
+    pa_path = (
+        "results/20260509_rees46_altval_context060_confidence_calibrated_open070/"
+        "rees46_confidence_calibrated_promotion_summary.json"
+    )
+    pa = load_json(pa_path)["selected"]["test"]
+    assert pa["conditions"][0]["feature"] == "top_semid_share"
+    assert_close(pa["conditions"][0]["threshold"], 2 / 3)
+    assert pa["net_gain"]["@100"] == 43
+    assert_close(pa["cannibalization_ratio"]["@100"], 0.39436619718309857)
+
+    l2_path = (
+        "results/20260509_rees46_altval_context060_learned_casp_gate_logistic_compact/"
+        "rees46_learned_casp_gate_logistic_compact_summary.json"
+    )
+    l2 = load_json(l2_path)
+    assert l2["selected"]["test"]["net_gain"]["@100"] == 32
+    assert_close(l2["selected"]["test"]["cannibalization_ratio"]["@100"], 0.6363636363636364)
+    assert l2["bootstrap"]["net@100"]["ci_low"] == 9.0
+    assert l2["bootstrap"]["net@100"]["ci_high"] == 56.0
+
 
 def check_synerise() -> None:
     path = "results/20260507_synerise_casp_policy_probe/synerise_casp_policy_summary.json"
@@ -98,6 +127,7 @@ def main() -> None:
         check_file(path)
     check_rees46_solver_table()
     check_rees46_l2()
+    check_rees46_alt_validation()
     check_tmall()
     check_synerise()
     print("OK: fixed reviewer artifacts match expected CASP table values.")

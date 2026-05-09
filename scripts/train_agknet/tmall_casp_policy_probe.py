@@ -275,6 +275,7 @@ def main():
     parser.add_argument('--validation-windows', default='pre:501:1001,gap:1001:1101,val:1101:1106,test:1106:1111')
     parser.add_argument('--test-windows', default='pre:501:1001,gap:1001:1101,val:1101:1111,test:1111:1112')
     parser.add_argument('--gate', default='pre_any_gap_silent_val_proxy_test_purchase')
+    parser.add_argument('--selection-k', type=int, choices=KS, default=100)
     parser.add_argument('--min-validation-net', type=int, default=5)
     parser.add_argument('--min-validation-net50', type=int, default=0)
     parser.add_argument('--max-validation-ratio', type=float, default=0.5)
@@ -303,13 +304,22 @@ def main():
         row for row in val_metrics
         if row['hit@10'] >= row['base@10']
         and row['net@50'] >= args.min_validation_net50
-        and row['net@100'] >= args.min_validation_net
-        and (row['ratio@100'] is None or row['ratio@100'] <= args.max_validation_ratio)
+        and row[f'net@{args.selection_k}'] >= args.min_validation_net
+        and (row[f'ratio@{args.selection_k}'] is None or row[f'ratio@{args.selection_k}'] <= args.max_validation_ratio)
     ]
     if feasible:
-        selected = sorted(feasible, key=lambda r: (r['net@100'], -r['ratio@100'] if r['ratio@100'] is not None else 0, -r['open_rate']), reverse=True)[0]
+        selected = sorted(
+            feasible,
+            key=lambda r: (
+                r[f'net@{args.selection_k}'],
+                -r[f'ratio@{args.selection_k}'] if r[f'ratio@{args.selection_k}'] is not None else 0,
+                r['net@100'],
+                -r['open_rate'],
+            ),
+            reverse=True,
+        )[0]
     else:
-        selected = sorted(val_metrics, key=lambda r: (r['net@100'], r['hit@100']), reverse=True)[0]
+        selected = sorted(val_metrics, key=lambda r: (r[f'net@{args.selection_k}'], r[f'hit@{args.selection_k}']), reverse=True)[0]
 
     selected_spec = None
     for spec in policy_specs:
@@ -342,6 +352,7 @@ def main():
         f"- Test users: `{len(test_rows)}`",
         f"- Feasible validation policies: `{len(feasible)}`",
         f"- Selected policy: `{selected['policy']}`",
+        f"- Selection objective: validation Net@`{args.selection_k}`",
         '',
         '## Selected Validation',
         '',
