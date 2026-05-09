@@ -1,0 +1,1506 @@
+{
+  "args": {
+    "artifact": "results/20260505_rees46_protocol_parallel_all_protocol/rees46_protocol_artifact.pkl",
+    "output_dir": "results/20260505_rees46_exact_stage_m_grid_full",
+    "semantic_source": "semid_category_brand_context",
+    "existing_weights": "",
+    "alphas": "0.25,0.5,1.0",
+    "betas": "0,20,50,100",
+    "budgets": "5,10,25,50,100,500",
+    "include_existing_only": true,
+    "selection_k": 10,
+    "ks": "10,50,100,500",
+    "source_topk": 500,
+    "semantic_source_topk": 500,
+    "bucket_topk": 2000,
+    "val_context_frac": 0.5,
+    "val_target_types": "cart",
+    "event_view_weight": 1.0,
+    "event_cart_weight": 3.0,
+    "max_users": 0
+  },
+  "semantic_source": "semid_category_brand_context",
+  "existing_weights": {
+    "global_purchase_popularity": 0.025,
+    "context_event_weighted_replay": 0.975
+  },
+  "selected_config": {
+    "config": "a0.5__b20__budget50",
+    "alpha": 0.5,
+    "beta": 20.0,
+    "budget": 50
+  },
+  "top_validation_configs": [
+    {
+      "config": "a0.5__b20__budget50",
+      "alpha": 0.5,
+      "beta": 20.0,
+      "budget": 50,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4219,
+        "hit@100": 4355,
+        "hit@500": 4658
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 139,
+        "@100": 155,
+        "@500": 82
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 48,
+        "@100": 71,
+        "@500": 12
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 92392,
+        "@100": 197873,
+        "@500": 147056
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 259,
+        "@100": 290,
+        "@500": 155
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 118,
+        "@100": 171,
+        "@500": 28
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7416066092459132,
+        "hit@100": 0.7655123923360871,
+        "hit@500": 0.8187730708384602
+      },
+      "mean_first_hit_rank": 20.33941605839416,
+      "net_gain": {
+        "@10": 0,
+        "@50": 91,
+        "@100": 84,
+        "@500": 70
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.09849337604987445,
+        "@100": 0.042451471398321144,
+        "@500": 0.047600913937547604
+      }
+    },
+    {
+      "config": "a0.5__b20__budget100",
+      "alpha": 0.5,
+      "beta": 20.0,
+      "budget": 100,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4219,
+        "hit@100": 4351,
+        "hit@500": 4693
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 139,
+        "@100": 162,
+        "@500": 123
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 48,
+        "@100": 82,
+        "@500": 18
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 92392,
+        "@100": 225458,
+        "@500": 327684
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 259,
+        "@100": 304,
+        "@500": 229
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 118,
+        "@100": 189,
+        "@500": 43
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7416066092459132,
+        "hit@100": 0.7648092810687291,
+        "hit@500": 0.8249252944278432
+      },
+      "mean_first_hit_rank": 22.212870232260816,
+      "net_gain": {
+        "@10": 0,
+        "@50": 91,
+        "@100": 80,
+        "@500": 105
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.09849337604987445,
+        "@100": 0.03548332727159826,
+        "@500": 0.03204306588054345
+      }
+    },
+    {
+      "config": "a0.5__b20__budget500",
+      "alpha": 0.5,
+      "beta": 20.0,
+      "budget": 500,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4219,
+        "hit@100": 4351,
+        "hit@500": 4718
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 139,
+        "@100": 162,
+        "@500": 187
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 48,
+        "@100": 82,
+        "@500": 57
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 92392,
+        "@100": 225458,
+        "@500": 862690
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 259,
+        "@100": 304,
+        "@500": 347
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 118,
+        "@100": 189,
+        "@500": 148
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7416066092459132,
+        "hit@100": 0.7648092810687291,
+        "hit@500": 0.8293197398488311
+      },
+      "mean_first_hit_rank": 24.81114879186096,
+      "net_gain": {
+        "@10": 0,
+        "@50": 91,
+        "@100": 80,
+        "@500": 130
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.09849337604987445,
+        "@100": 0.03548332727159826,
+        "@500": 0.015069144188526586
+      }
+    },
+    {
+      "config": "a0.5__b20__budget25",
+      "alpha": 0.5,
+      "beta": 20.0,
+      "budget": 25,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4218,
+        "hit@100": 4344,
+        "hit@500": 4647
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 138,
+        "@100": 97,
+        "@500": 64
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 48,
+        "@100": 24,
+        "@500": 5
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 91380,
+        "@100": 88760,
+        "@500": 74476
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 257,
+        "@100": 180,
+        "@500": 121
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 118,
+        "@100": 65,
+        "@500": 8
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7414308314290736,
+        "hit@100": 0.7635788363508526,
+        "hit@500": 0.8168395148532255
+      },
+      "mean_first_hit_rank": 20.672692059393157,
+      "net_gain": {
+        "@10": 0,
+        "@50": 90,
+        "@100": 73,
+        "@500": 59
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.0984898227183191,
+        "@100": 0.08224425416854439,
+        "@500": 0.07922015145818788
+      }
+    },
+    {
+      "config": "a1__b20__budget50",
+      "alpha": 1.0,
+      "beta": 20.0,
+      "budget": 50,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4215,
+        "hit@100": 4356,
+        "hit@500": 4658
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 117,
+        "@100": 147,
+        "@500": 82
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 30,
+        "@100": 62,
+        "@500": 12
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 67089,
+        "@100": 168803,
+        "@500": 147056
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 219,
+        "@100": 277,
+        "@500": 155
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 79,
+        "@100": 147,
+        "@500": 28
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7409034979785551,
+        "hit@100": 0.7656881701529267,
+        "hit@500": 0.8187730708384602
+      },
+      "mean_first_hit_rank": 20.377629884070416,
+      "net_gain": {
+        "@10": 0,
+        "@50": 87,
+        "@100": 85,
+        "@500": 70
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.12967848678620936,
+        "@100": 0.05035455531003596,
+        "@500": 0.047600913937547604
+      }
+    },
+    {
+      "config": "a1__b20__budget100",
+      "alpha": 1.0,
+      "beta": 20.0,
+      "budget": 100,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4215,
+        "hit@100": 4356,
+        "hit@500": 4693
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 117,
+        "@100": 147,
+        "@500": 123
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 30,
+        "@100": 62,
+        "@500": 18
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 67089,
+        "@100": 168846,
+        "@500": 327684
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 219,
+        "@100": 277,
+        "@500": 229
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 79,
+        "@100": 147,
+        "@500": 43
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7409034979785551,
+        "hit@100": 0.7656881701529267,
+        "hit@500": 0.8249252944278432
+      },
+      "mean_first_hit_rank": 22.10441082463243,
+      "net_gain": {
+        "@10": 0,
+        "@50": 87,
+        "@100": 85,
+        "@500": 105
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.12967848678620936,
+        "@100": 0.050341731518661975,
+        "@500": 0.03204306588054345
+      }
+    },
+    {
+      "config": "a1__b20__budget500",
+      "alpha": 1.0,
+      "beta": 20.0,
+      "budget": 500,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4215,
+        "hit@100": 4356,
+        "hit@500": 4724
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 117,
+        "@100": 147,
+        "@500": 178
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 30,
+        "@100": 62,
+        "@500": 42
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 67089,
+        "@100": 168846,
+        "@500": 736526
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 219,
+        "@100": 277,
+        "@500": 327
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 79,
+        "@100": 147,
+        "@500": 112
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7409034979785551,
+        "hit@100": 0.7656881701529267,
+        "hit@500": 0.8303744067498682
+      },
+      "mean_first_hit_rank": 24.69834885690093,
+      "net_gain": {
+        "@10": 0,
+        "@50": 87,
+        "@100": 85,
+        "@500": 136
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.12967848678620936,
+        "@100": 0.050341731518661975,
+        "@500": 0.018465064369757485
+      }
+    },
+    {
+      "config": "a1__b20__budget25",
+      "alpha": 1.0,
+      "beta": 20.0,
+      "budget": 25,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4215,
+        "hit@100": 4344,
+        "hit@500": 4647
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 117,
+        "@100": 97,
+        "@500": 64
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 30,
+        "@100": 24,
+        "@500": 5
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 67089,
+        "@100": 88760,
+        "@500": 74476
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 219,
+        "@100": 180,
+        "@500": 121
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 79,
+        "@100": 65,
+        "@500": 8
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7409034979785551,
+        "hit@100": 0.7635788363508526,
+        "hit@500": 0.8168395148532255
+      },
+      "mean_first_hit_rank": 20.674843985366902,
+      "net_gain": {
+        "@10": 0,
+        "@50": 87,
+        "@100": 73,
+        "@500": 59
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.12967848678620936,
+        "@100": 0.08224425416854439,
+        "@500": 0.07922015145818788
+      }
+    },
+    {
+      "config": "a0.25__b20__budget50",
+      "alpha": 0.25,
+      "beta": 20.0,
+      "budget": 50,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4208,
+        "hit@100": 4355,
+        "hit@500": 4658
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 153,
+        "@100": 155,
+        "@500": 82
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 73,
+        "@100": 71,
+        "@500": 12
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 111748,
+        "@100": 197873,
+        "@500": 147056
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 298,
+        "@100": 290,
+        "@500": 155
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 163,
+        "@100": 171,
+        "@500": 28
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7396730532606784,
+        "hit@100": 0.7655123923360871,
+        "hit@500": 0.8187730708384602
+      },
+      "mean_first_hit_rank": 20.45577501073422,
+      "net_gain": {
+        "@10": 0,
+        "@50": 80,
+        "@100": 84,
+        "@500": 70
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.0715896481368794,
+        "@100": 0.042451471398321144,
+        "@500": 0.047600913937547604
+      }
+    },
+    {
+      "config": "a0.25__b20__budget100",
+      "alpha": 0.25,
+      "beta": 20.0,
+      "budget": 100,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4208,
+        "hit@100": 4340,
+        "hit@500": 4693
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 153,
+        "@100": 171,
+        "@500": 123
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 73,
+        "@100": 102,
+        "@500": 18
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 111748,
+        "@100": 270830,
+        "@500": 327684
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 298,
+        "@100": 321,
+        "@500": 229
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 163,
+        "@100": 244,
+        "@500": 43
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7396730532606784,
+        "hit@100": 0.7628757250834944,
+        "hit@500": 0.8249252944278432
+      },
+      "mean_first_hit_rank": 22.42020029831664,
+      "net_gain": {
+        "@10": 0,
+        "@50": 80,
+        "@100": 69,
+        "@500": 105
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.0715896481368794,
+        "@100": 0.02547723664291253,
+        "@500": 0.03204306588054345
+      }
+    },
+    {
+      "config": "a0.25__b20__budget500",
+      "alpha": 0.25,
+      "beta": 20.0,
+      "budget": 500,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4208,
+        "hit@100": 4340,
+        "hit@500": 4709
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 153,
+        "@100": 171,
+        "@500": 193
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 73,
+        "@100": 102,
+        "@500": 72
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 111748,
+        "@100": 270830,
+        "@500": 935113
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 298,
+        "@100": 321,
+        "@500": 357
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 163,
+        "@100": 244,
+        "@500": 184
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7396730532606784,
+        "hit@100": 0.7628757250834944,
+        "hit@500": 0.8277377394972755
+      },
+      "mean_first_hit_rank": 25.131025695476747,
+      "net_gain": {
+        "@10": 0,
+        "@50": 80,
+        "@100": 69,
+        "@500": 121
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.0715896481368794,
+        "@100": 0.02547723664291253,
+        "@500": 0.012939612645744418
+      }
+    },
+    {
+      "config": "a0.25__b20__budget25",
+      "alpha": 0.25,
+      "beta": 20.0,
+      "budget": 25,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4203,
+        "hit@100": 4344,
+        "hit@500": 4647
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 142,
+        "@100": 97,
+        "@500": 64
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 67,
+        "@100": 24,
+        "@500": 5
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 105178,
+        "@100": 88760,
+        "@500": 74476
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 272,
+        "@100": 180,
+        "@500": 121
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 154,
+        "@100": 65,
+        "@500": 8
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7387941641764809,
+        "hit@100": 0.7635788363508526,
+        "hit@500": 0.8168395148532255
+      },
+      "mean_first_hit_rank": 20.709274800946847,
+      "net_gain": {
+        "@10": 0,
+        "@50": 75,
+        "@100": 73,
+        "@500": 59
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.0713076879195269,
+        "@100": 0.08224425416854439,
+        "@500": 0.07922015145818788
+      }
+    },
+    {
+      "config": "a1__b20__budget10",
+      "alpha": 1.0,
+      "beta": 20.0,
+      "budget": 10,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4195,
+        "hit@100": 4332,
+        "hit@500": 4630
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 76,
+        "@100": 66,
+        "@500": 42
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 9,
+        "@100": 5,
+        "@500": 0
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 36593,
+        "@100": 34739,
+        "@500": 28540
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 134,
+        "@100": 121,
+        "@500": 79
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 36,
+        "@100": 9,
+        "@500": 0
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7373879416417648,
+        "hit@100": 0.7614695025487783,
+        "hit@500": 0.8138512919669537
+      },
+      "mean_first_hit_rank": 20.765442764578832,
+      "net_gain": {
+        "@10": 0,
+        "@50": 67,
+        "@100": 61,
+        "@500": 42
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.18309512748339846,
+        "@100": 0.17559515242234952,
+        "@500": 0.14716187806587247
+      }
+    },
+    {
+      "config": "a0.5__b20__budget10",
+      "alpha": 0.5,
+      "beta": 20.0,
+      "budget": 10,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4195,
+        "hit@100": 4332,
+        "hit@500": 4630
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 76,
+        "@100": 66,
+        "@500": 42
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 9,
+        "@100": 5,
+        "@500": 0
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 36593,
+        "@100": 34739,
+        "@500": 28540
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 134,
+        "@100": 121,
+        "@500": 79
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 36,
+        "@100": 9,
+        "@500": 0
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7373879416417648,
+        "hit@100": 0.7614695025487783,
+        "hit@500": 0.8138512919669537
+      },
+      "mean_first_hit_rank": 20.765874730021597,
+      "net_gain": {
+        "@10": 0,
+        "@50": 67,
+        "@100": 61,
+        "@500": 42
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.18309512748339846,
+        "@100": 0.17559515242234952,
+        "@500": 0.14716187806587247
+      }
+    },
+    {
+      "config": "a0.25__b20__budget10",
+      "alpha": 0.25,
+      "beta": 20.0,
+      "budget": 10,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4195,
+        "hit@100": 4332,
+        "hit@500": 4630
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 76,
+        "@100": 66,
+        "@500": 42
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 9,
+        "@100": 5,
+        "@500": 0
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 36593,
+        "@100": 34739,
+        "@500": 28540
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 134,
+        "@100": 121,
+        "@500": 79
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 36,
+        "@100": 9,
+        "@500": 0
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7373879416417648,
+        "hit@100": 0.7614695025487783,
+        "hit@500": 0.8138512919669537
+      },
+      "mean_first_hit_rank": 20.769546436285097,
+      "net_gain": {
+        "@10": 0,
+        "@50": 67,
+        "@100": 61,
+        "@500": 42
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.18309512748339846,
+        "@100": 0.17559515242234952,
+        "@500": 0.14716187806587247
+      }
+    },
+    {
+      "config": "a0.25__b20__budget5",
+      "alpha": 0.25,
+      "beta": 20.0,
+      "budget": 5,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4173,
+        "hit@100": 4310,
+        "hit@500": 4614
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 48,
+        "@100": 41,
+        "@500": 26
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 3,
+        "@100": 2,
+        "@500": 0
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 17734,
+        "@100": 16907,
+        "@500": 13298
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 87,
+        "@100": 77,
+        "@500": 48
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 7,
+        "@100": 4,
+        "@500": 0
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7335208296712955,
+        "hit@100": 0.757602390578309,
+        "hit@500": 0.8110388468975215
+      },
+      "mean_first_hit_rank": 21.042479410489815,
+      "net_gain": {
+        "@10": 0,
+        "@50": 45,
+        "@100": 39,
+        "@500": 26
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.2537498590278561,
+        "@100": 0.2306736854557284,
+        "@500": 0.19551812302601895
+      }
+    },
+    {
+      "config": "a0.5__b20__budget5",
+      "alpha": 0.5,
+      "beta": 20.0,
+      "budget": 5,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4173,
+        "hit@100": 4310,
+        "hit@500": 4614
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 48,
+        "@100": 41,
+        "@500": 26
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 3,
+        "@100": 2,
+        "@500": 0
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 17734,
+        "@100": 16907,
+        "@500": 13298
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 87,
+        "@100": 77,
+        "@500": 48
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 7,
+        "@100": 4,
+        "@500": 0
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7335208296712955,
+        "hit@100": 0.757602390578309,
+        "hit@500": 0.8110388468975215
+      },
+      "mean_first_hit_rank": 21.043563068920676,
+      "net_gain": {
+        "@10": 0,
+        "@50": 45,
+        "@100": 39,
+        "@500": 26
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.2537498590278561,
+        "@100": 0.2306736854557284,
+        "@500": 0.19551812302601895
+      }
+    },
+    {
+      "config": "a1__b20__budget5",
+      "alpha": 1.0,
+      "beta": 20.0,
+      "budget": 5,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4173,
+        "hit@100": 4310,
+        "hit@500": 4614
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 48,
+        "@100": 41,
+        "@500": 26
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 3,
+        "@100": 2,
+        "@500": 0
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 17734,
+        "@100": 16907,
+        "@500": 13298
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 87,
+        "@100": 77,
+        "@500": 48
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 7,
+        "@100": 4,
+        "@500": 0
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7335208296712955,
+        "hit@100": 0.757602390578309,
+        "hit@500": 0.8110388468975215
+      },
+      "mean_first_hit_rank": 21.043996532293022,
+      "net_gain": {
+        "@10": 0,
+        "@50": 45,
+        "@100": 39,
+        "@500": 26
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": 0.2537498590278561,
+        "@100": 0.2306736854557284,
+        "@500": 0.19551812302601895
+      }
+    },
+    {
+      "config": "a1__b50__budget50",
+      "alpha": 1.0,
+      "beta": 50.0,
+      "budget": 50,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4128,
+        "hit@100": 4368,
+        "hit@500": 4658
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 126,
+        "@500": 82
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 29,
+        "@500": 12
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 104119,
+        "@500": 147056
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 231,
+        "@500": 155
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 77,
+        "@500": 28
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7256108279135173,
+        "hit@100": 0.7677975039550009,
+        "hit@500": 0.8187730708384602
+      },
+      "mean_first_hit_rank": 20.946114212108203,
+      "net_gain": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 97,
+        "@500": 70
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": null,
+        "@100": 0.0931626312200463,
+        "@500": 0.047600913937547604
+      }
+    },
+    {
+      "config": "a1__b50__budget100",
+      "alpha": 1.0,
+      "beta": 50.0,
+      "budget": 100,
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4128,
+        "hit@100": 4368,
+        "hit@500": 4693
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 126,
+        "@500": 123
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 29,
+        "@500": 18
+      },
+      "inserted_items_total": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 104119,
+        "@500": 327684
+      },
+      "target_inserted": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 231,
+        "@500": 229
+      },
+      "target_displaced": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 77,
+        "@500": 43
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7256108279135173,
+        "hit@100": 0.7677975039550009,
+        "hit@500": 0.8249252944278432
+      },
+      "mean_first_hit_rank": 22.69060302578308,
+      "net_gain": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 97,
+        "@500": 105
+      },
+      "net_gain_per_100_inserted_items": {
+        "@10": null,
+        "@50": null,
+        "@100": 0.0931626312200463,
+        "@500": 0.03204306588054345
+      }
+    }
+  ],
+  "selected_exact": {
+    "validation_meta": {
+      "active_catalog_size": 281854,
+      "bucket_stats": {
+        "n_buckets": 17039,
+        "mean_bucket_size": 11.00093902224309,
+        "max_bucket_size": 1847
+      }
+    },
+    "test_meta": {
+      "active_catalog_size": 294234,
+      "bucket_stats": {
+        "n_buckets": 17110,
+        "mean_bucket_size": 11.182466393921683,
+        "max_bucket_size": 1734
+      }
+    },
+    "validation": {
+      "n_users": 5689,
+      "existing": {
+        "hit_counts": {
+          "hit@10": 3700,
+          "hit@50": 4128,
+          "hit@100": 4271,
+          "hit@500": 4588
+        },
+        "hit_rates": {
+          "hit@10": 0.650377922306205,
+          "hit@50": 0.7256108279135173,
+          "hit@100": 0.750747055721568,
+          "hit@500": 0.8064686236596942
+        },
+        "mean_first_hit_rank": 21.47079337401918
+      },
+      "semantic": {
+        "hit_counts": {
+          "hit@10": 329,
+          "hit@50": 601,
+          "hit@100": 706,
+          "hit@500": 917
+        },
+        "hit_rates": {
+          "hit@10": 0.057830901740200384,
+          "hit@50": 0.10564246792054843,
+          "hit@100": 0.12409913868869749,
+          "hit@500": 0.16118825804183512
+        },
+        "mean_first_hit_rank": 101.38998957247132
+      },
+      "fused": {
+        "hit_counts": {
+          "hit@10": 3700,
+          "hit@50": 4219,
+          "hit@100": 4355,
+          "hit@500": 4658
+        },
+        "hit_rates": {
+          "hit@10": 0.650377922306205,
+          "hit@50": 0.7416066092459132,
+          "hit@100": 0.7655123923360871,
+          "hit@500": 0.8187730708384602
+        },
+        "mean_first_hit_rank": 20.33941605839416
+      },
+      "displacement": {
+        "@10": {
+          "gross_recovery": 0,
+          "cannibalized_hit": 0,
+          "net_gain": 0,
+          "inserted_items_total": 0,
+          "displaced_existing_items_total": 0,
+          "mean_inserted_items_per_user": 0.0,
+          "mean_displaced_existing_items_per_user": 0.0,
+          "net_gain_per_100_inserted_items": null,
+          "target_inserted": 0,
+          "target_displaced": 0,
+          "collision_items_total": 3257
+        },
+        "@50": {
+          "gross_recovery": 139,
+          "cannibalized_hit": 48,
+          "net_gain": 91,
+          "inserted_items_total": 92392,
+          "displaced_existing_items_total": 92392,
+          "mean_inserted_items_per_user": 16.240464053436455,
+          "mean_displaced_existing_items_per_user": 16.240464053436455,
+          "net_gain_per_100_inserted_items": 0.09849337604987445,
+          "target_inserted": 259,
+          "target_displaced": 118,
+          "collision_items_total": 22298
+        },
+        "@100": {
+          "gross_recovery": 155,
+          "cannibalized_hit": 71,
+          "net_gain": 84,
+          "inserted_items_total": 197873,
+          "displaced_existing_items_total": 197873,
+          "mean_inserted_items_per_user": 34.78168395148532,
+          "mean_displaced_existing_items_per_user": 34.78168395148532,
+          "net_gain_per_100_inserted_items": 0.042451471398321144,
+          "target_inserted": 290,
+          "target_displaced": 171,
+          "collision_items_total": 50141
+        },
+        "@500": {
+          "gross_recovery": 82,
+          "cannibalized_hit": 12,
+          "net_gain": 70,
+          "inserted_items_total": 147056,
+          "displaced_existing_items_total": 147056,
+          "mean_inserted_items_per_user": 25.849182633151695,
+          "mean_displaced_existing_items_per_user": 25.849182633151695,
+          "net_gain_per_100_inserted_items": 0.047600913937547604,
+          "target_inserted": 155,
+          "target_displaced": 28,
+          "collision_items_total": 163787
+        }
+      },
+      "target_collision": {
+        "target_in_both_count": 454,
+        "target_semantic_improved_key_count": 467
+      }
+    },
+    "test": {
+      "n_users": 16954,
+      "existing": {
+        "hit_counts": {
+          "hit@10": 3044,
+          "hit@50": 5319,
+          "hit@100": 6392,
+          "hit@500": 8816
+        },
+        "hit_rates": {
+          "hit@10": 0.17954465023003421,
+          "hit@50": 0.3137312728559632,
+          "hit@100": 0.377020172230742,
+          "hit@500": 0.519995281349534
+        },
+        "mean_first_hit_rank": 87.31907894736842
+      },
+      "semantic": {
+        "hit_counts": {
+          "hit@10": 676,
+          "hit@50": 1100,
+          "hit@100": 1253,
+          "hit@500": 1706
+        },
+        "hit_rates": {
+          "hit@10": 0.039872596437418896,
+          "hit@50": 0.06488144390704259,
+          "hit@100": 0.07390586292320396,
+          "hit@500": 0.1006252211867406
+        },
+        "mean_first_hit_rank": 123.78027397260274
+      },
+      "fused": {
+        "hit_counts": {
+          "hit@10": 3044,
+          "hit@50": 5079,
+          "hit@100": 5999,
+          "hit@500": 8858
+        },
+        "hit_rates": {
+          "hit@10": 0.17954465023003421,
+          "hit@50": 0.299575321458063,
+          "hit@100": 0.35383980181668045,
+          "hit@500": 0.5224725728441666
+        },
+        "mean_first_hit_rank": 91.75716866109731
+      },
+      "displacement": {
+        "@10": {
+          "gross_recovery": 0,
+          "cannibalized_hit": 0,
+          "net_gain": 0,
+          "inserted_items_total": 0,
+          "displaced_existing_items_total": 0,
+          "mean_inserted_items_per_user": 0.0,
+          "mean_displaced_existing_items_per_user": 0.0,
+          "net_gain_per_100_inserted_items": null,
+          "target_inserted": 0,
+          "target_displaced": 0,
+          "collision_items_total": 4576
+        },
+        "@50": {
+          "gross_recovery": 283,
+          "cannibalized_hit": 523,
+          "net_gain": -240,
+          "inserted_items_total": 273812,
+          "displaced_existing_items_total": 273812,
+          "mean_inserted_items_per_user": 16.15028901734104,
+          "mean_displaced_existing_items_per_user": 16.15028901734104,
+          "net_gain_per_100_inserted_items": -0.0876513812396827,
+          "target_inserted": 404,
+          "target_displaced": 699,
+          "collision_items_total": 50706
+        },
+        "@100": {
+          "gross_recovery": 318,
+          "cannibalized_hit": 711,
+          "net_gain": -393,
+          "inserted_items_total": 611306,
+          "displaced_existing_items_total": 611306,
+          "mean_inserted_items_per_user": 36.05674177185325,
+          "mean_displaced_existing_items_per_user": 36.05674177185325,
+          "net_gain_per_100_inserted_items": -0.06428858869371477,
+          "target_inserted": 463,
+          "target_displaced": 971,
+          "collision_items_total": 106989
+        },
+        "@500": {
+          "gross_recovery": 155,
+          "cannibalized_hit": 113,
+          "net_gain": 42,
+          "inserted_items_total": 472243,
+          "displaced_existing_items_total": 472243,
+          "mean_inserted_items_per_user": 27.854370649994102,
+          "mean_displaced_existing_items_per_user": 27.854370649994102,
+          "net_gain_per_100_inserted_items": 0.008893726323100606,
+          "target_inserted": 206,
+          "target_displaced": 169,
+          "collision_items_total": 425174
+        }
+      },
+      "target_collision": {
+        "target_in_both_count": 902,
+        "target_semantic_improved_key_count": 777
+      }
+    }
+  },
+  "interpretation": "Exact validation selected `a0.5__b20__budget50`. On test, fused Hit@10 changes by +0, with gross recovery 0 and cannibalized hits 0. This selection accounts for fixed-length displacement, unlike the earlier rank-only proxy."
+}

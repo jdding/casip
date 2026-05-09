@@ -1,0 +1,554 @@
+{
+  "args": {
+    "artifact": "<repo-root>/results/20260505_rees46_protocol_parallel_all_protocol/rees46_protocol_artifact.pkl",
+    "output_dir": "<repo-root>/results/20260505_rees46_purchase_event_gate_local",
+    "ks": "10,50,100,500",
+    "sources": "global_popularity,global_purchase_popularity,context_feedback_replay,context_event_weighted_replay,context_cart_replay,context_view_replay,seen_product_replay",
+    "source_topk": 500,
+    "val_context_frac": 0.5,
+    "selection_k": 10,
+    "max_users": 0,
+    "workers": 12,
+    "fine_pop_context_step": 0.025,
+    "val_target_types": "cart"
+  },
+  "artifact_args": {
+    "input": "<external-data-root>",
+    "output_dir": "results/20260505_rees46_protocol_parallel_all_protocol",
+    "chunksize": 1000000,
+    "windows": "pre:2019-10-01:2019-12-01,gap:2019-12-01:2020-02-01,val:2020-02-01:2020-03-15,test:2020-03-15:2020-05-01",
+    "category_prefixes": "",
+    "min_pre_events": 1,
+    "min_val_implicit": 1,
+    "min_test_purchases": 1,
+    "top_pop_items": 5000,
+    "max_rows": 0,
+    "max_strict_users": 0,
+    "workers": 6
+  },
+  "n_users_total": 16954,
+  "n_val_users": 5689,
+  "n_test_users": 16954,
+  "n_configs": 122,
+  "selected_by_val": "global_purchase_popularity_0.025__context_event_weighted_replay_0.975",
+  "selected_weights": {
+    "global_purchase_popularity": 0.025,
+    "context_event_weighted_replay": 0.975
+  },
+  "selected_val_summary": {
+    "n_users": 5689,
+    "hit_counts": {
+      "hit@10": 3700,
+      "hit@50": 4128,
+      "hit@100": 4271,
+      "hit@500": 4588
+    },
+    "hit_rates": {
+      "hit@10": 0.650377922306205,
+      "hit@50": 0.7256108279135173,
+      "hit@100": 0.750747055721568,
+      "hit@500": 0.8064686236596942
+    },
+    "mean_first_hit_rank": 21.47079337401918
+  },
+  "selected_test_summary": {
+    "n_users": 16954,
+    "hit_counts": {
+      "hit@10": 3044,
+      "hit@50": 5319,
+      "hit@100": 6392,
+      "hit@500": 8816
+    },
+    "hit_rates": {
+      "hit@10": 0.17954465023003421,
+      "hit@50": 0.3137312728559632,
+      "hit@100": 0.377020172230742,
+      "hit@500": 0.519995281349534
+    },
+    "mean_first_hit_rank": 87.31907894736842
+  },
+  "top_val_configs": {
+    "global_purchase_popularity_0.025__context_event_weighted_replay_0.975": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4128,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7256108279135173,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.47079337401918
+    },
+    "global_purchase_popularity_0.050__context_event_weighted_replay_0.950": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4128,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7256108279135173,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.479075850043593
+    },
+    "global_purchase_popularity_0.075__context_event_weighted_replay_0.925": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4128,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.650377922306205,
+        "hit@50": 0.7256108279135173,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.49433304272014
+    },
+    "global_purchase_popularity_0.175__context_event_weighted_replay_0.825": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3688,
+        "hit@50": 4130,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.6482685885041308,
+        "hit@50": 0.7259623835471963,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.606146469049694
+    },
+    "global_purchase_popularity_0.100__context_event_weighted_replay_0.900": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3688,
+        "hit@50": 4129,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.6482685885041308,
+        "hit@50": 0.7257866057303568,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.51242371403662
+    },
+    "global_purchase_popularity_0.125__context_event_weighted_replay_0.875": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3688,
+        "hit@50": 4129,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.6482685885041308,
+        "hit@50": 0.7257866057303568,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.542066259808195
+    },
+    "global_purchase_popularity_0.150__context_event_weighted_replay_0.850": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3688,
+        "hit@50": 4129,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.6482685885041308,
+        "hit@50": 0.7257866057303568,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.574978204010463
+    },
+    "global_purchase_popularity_0.200__context_event_weighted_replay_0.800": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3668,
+        "hit@50": 4128,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.6447530321673405,
+        "hit@50": 0.7256108279135173,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.66020052310375
+    },
+    "global_purchase_popularity_0.250__context_event_weighted_replay_0.750": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3668,
+        "hit@50": 4128,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.6447530321673405,
+        "hit@50": 0.7256108279135173,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.765693112467307
+    },
+    "global_purchase_popularity_0.225__context_event_weighted_replay_0.775": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3668,
+        "hit@50": 4127,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.6447530321673405,
+        "hit@50": 0.7254350500966777,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.69463818657367
+    },
+    "global_popularity_0.025__context_feedback_replay_0.975": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3660,
+        "hit@50": 4131,
+        "hit@100": 4249,
+        "hit@500": 4561
+      },
+      "hit_rates": {
+        "hit@10": 0.6433468096326244,
+        "hit@50": 0.7261381613640359,
+        "hit@100": 0.7468799437510986,
+        "hit@500": 0.8017226226050272
+      },
+      "mean_first_hit_rank": 21.282613461960096
+    },
+    "global_popularity_0.050__context_feedback_replay_0.950": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3660,
+        "hit@50": 4131,
+        "hit@100": 4249,
+        "hit@500": 4561
+      },
+      "hit_rates": {
+        "hit@10": 0.6433468096326244,
+        "hit@50": 0.7261381613640359,
+        "hit@100": 0.7468799437510986,
+        "hit@500": 0.8017226226050272
+      },
+      "mean_first_hit_rank": 21.294891471168604
+    },
+    "global_popularity_0.075__context_feedback_replay_0.925": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3660,
+        "hit@50": 4131,
+        "hit@100": 4249,
+        "hit@500": 4561
+      },
+      "hit_rates": {
+        "hit@10": 0.6433468096326244,
+        "hit@50": 0.7261381613640359,
+        "hit@100": 0.7468799437510986,
+        "hit@500": 0.8017226226050272
+      },
+      "mean_first_hit_rank": 21.32010524007893
+    },
+    "global_purchase_popularity_0.275__context_event_weighted_replay_0.725": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3640,
+        "hit@50": 4128,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "hit_rates": {
+        "hit@10": 0.639831253295834,
+        "hit@50": 0.7256108279135173,
+        "hit@100": 0.750747055721568,
+        "hit@500": 0.8064686236596942
+      },
+      "mean_first_hit_rank": 21.813426329555362
+    },
+    "global_popularity_0.3__context_event_weighted_replay_0.7": {
+      "n_users": 5689,
+      "hit_counts": {
+        "hit@10": 3637,
+        "hit@50": 4131,
+        "hit@100": 4249,
+        "hit@500": 4561
+      },
+      "hit_rates": {
+        "hit@10": 0.6393039198453155,
+        "hit@50": 0.7261381613640359,
+        "hit@100": 0.7468799437510986,
+        "hit@500": 0.8017226226050272
+      },
+      "mean_first_hit_rank": 21.288094716071036
+    }
+  },
+  "top_test_configs_oracle_diagnostic": {
+    "global_purchase_popularity_0.3__context_event_weighted_replay_0.7": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3107,
+        "hit@50": 5333,
+        "hit@100": 6388,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.183260587471983,
+        "hit@50": 0.3145570366875074,
+        "hit@100": 0.3767842397074437,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.15437840290382
+    },
+    "global_purchase_popularity_0.300__context_event_weighted_replay_0.700": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3107,
+        "hit@50": 5333,
+        "hit@100": 6388,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.183260587471983,
+        "hit@50": 0.3145570366875074,
+        "hit@100": 0.3767842397074437,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.15437840290382
+    },
+    "global_purchase_popularity_0.325__context_event_weighted_replay_0.675": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3105,
+        "hit@50": 5334,
+        "hit@100": 6388,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.18314262121033384,
+        "hit@50": 0.314616019818332,
+        "hit@100": 0.3767842397074437,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.14609800362976
+    },
+    "global_purchase_popularity_0.275__context_event_weighted_replay_0.725": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3104,
+        "hit@50": 5333,
+        "hit@100": 6388,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.18308363807950925,
+        "hit@50": 0.3145570366875074,
+        "hit@100": 0.3767842397074437,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.16311252268602
+    },
+    "global_purchase_popularity_0.350__context_event_weighted_replay_0.650": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3103,
+        "hit@50": 5337,
+        "hit@100": 6388,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.18302465494868467,
+        "hit@50": 0.3147929692108057,
+        "hit@100": 0.3767842397074437,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.15585299455536
+    },
+    "global_purchase_popularity_0.575__context_event_weighted_replay_0.425": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3102,
+        "hit@50": 5327,
+        "hit@100": 6385,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.18296567181786008,
+        "hit@50": 0.3142031379025599,
+        "hit@100": 0.3766072903149699,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.33439201451905
+    },
+    "global_purchase_popularity_0.550__context_event_weighted_replay_0.450": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3101,
+        "hit@50": 5328,
+        "hit@100": 6389,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.1829066886870355,
+        "hit@50": 0.31426212103338447,
+        "hit@100": 0.37684322283826827,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.28391560798548
+    },
+    "global_purchase_popularity_0.600__context_event_weighted_replay_0.400": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3100,
+        "hit@50": 5322,
+        "hit@100": 6386,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.1828477055562109,
+        "hit@50": 0.31390822224843695,
+        "hit@100": 0.3766662734457945,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.377722323049
+    },
+    "global_purchase_popularity_0.625__context_event_weighted_replay_0.375": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3100,
+        "hit@50": 5317,
+        "hit@100": 6384,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.1828477055562109,
+        "hit@50": 0.313613306594314,
+        "hit@100": 0.37654830718414534,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.42774500907441
+    },
+    "global_purchase_popularity_0.425__context_event_weighted_replay_0.575": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3095,
+        "hit@50": 5336,
+        "hit@100": 6386,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.182552789902088,
+        "hit@50": 0.3147339860799811,
+        "hit@100": 0.3766662734457945,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.15131578947368
+    },
+    "global_purchase_popularity_0.400__context_event_weighted_replay_0.600": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3095,
+        "hit@50": 5335,
+        "hit@100": 6387,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.182552789902088,
+        "hit@50": 0.31467500294915657,
+        "hit@100": 0.3767252565766191,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.14643829401089
+    },
+    "global_purchase_popularity_0.650__context_event_weighted_replay_0.350": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3095,
+        "hit@50": 5315,
+        "hit@100": 6381,
+        "hit@500": 8817
+      },
+      "hit_rates": {
+        "hit@10": 0.182552789902088,
+        "hit@50": 0.31349534033266485,
+        "hit@100": 0.3763713577916716,
+        "hit@500": 0.5200542644803586
+      },
+      "mean_first_hit_rank": 87.54428944085289
+    },
+    "global_purchase_popularity_0.375__context_event_weighted_replay_0.625": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3093,
+        "hit@50": 5337,
+        "hit@100": 6388,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.18243482364043884,
+        "hit@50": 0.3147929692108057,
+        "hit@100": 0.3767842397074437,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.14598457350272
+    },
+    "global_purchase_popularity_0.525__context_event_weighted_replay_0.475": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3092,
+        "hit@50": 5329,
+        "hit@100": 6389,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.18237584050961425,
+        "hit@50": 0.31432110416420905,
+        "hit@100": 0.37684322283826827,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.25045372050816
+    },
+    "global_purchase_popularity_0.450__context_event_weighted_replay_0.550": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 3088,
+        "hit@50": 5334,
+        "hit@100": 6385,
+        "hit@500": 8816
+      },
+      "hit_rates": {
+        "hit@10": 0.1821399079863159,
+        "hit@50": 0.314616019818332,
+        "hit@100": 0.3766072903149699,
+        "hit@500": 0.519995281349534
+      },
+      "mean_first_hit_rank": 87.15449183303085
+    }
+  }
+}

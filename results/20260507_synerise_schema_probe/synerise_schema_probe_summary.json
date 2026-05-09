@@ -1,0 +1,107 @@
+{
+  "args": {
+    "input_dir": "data/synerise_dataset",
+    "output_dir": "results/20260507_synerise_schema_probe",
+    "batch_size": 500000,
+    "max_batches": 0
+  },
+  "provenance": {
+    "cwd": "<repo-root>",
+    "argv": [
+      "scripts/train_agknet/synerise_schema_probe.py",
+      "--input-dir",
+      "data/synerise_dataset",
+      "--output-dir",
+      "results/20260507_synerise_schema_probe"
+    ],
+    "hostname": "<local-host>",
+    "python": "3.9.6"
+  },
+  "files": [
+    {
+      "name": "product_buy",
+      "path": "data/synerise_dataset/product_buy.parquet",
+      "exists": true,
+      "schema": {
+        "client_id": "int64",
+        "timestamp": "string",
+        "sku": "int64"
+      },
+      "rows": 2318502,
+      "min_timestamp": "2022-06-23 00:12:15",
+      "max_timestamp": "2022-12-08 00:09:15",
+      "timestamp_scan_truncated": false
+    },
+    {
+      "name": "add_to_cart",
+      "path": "data/synerise_dataset/add_to_cart.parquet",
+      "exists": true,
+      "schema": {
+        "client_id": "int64",
+        "timestamp": "string",
+        "sku": "int64"
+      },
+      "rows": 7541117,
+      "min_timestamp": "2022-06-23 00:10:20",
+      "max_timestamp": "2022-12-08 00:09:55",
+      "timestamp_scan_truncated": false
+    },
+    {
+      "name": "remove_from_cart",
+      "path": "data/synerise_dataset/remove_from_cart.parquet",
+      "exists": true,
+      "schema": {
+        "client_id": "int64",
+        "timestamp": "string",
+        "sku": "int64"
+      },
+      "rows": 2688894,
+      "min_timestamp": "2022-06-23 00:12:25",
+      "max_timestamp": "2022-12-08 00:09:40",
+      "timestamp_scan_truncated": false
+    },
+    {
+      "name": "page_visit",
+      "path": "data/synerise_dataset/page_visit.parquet",
+      "exists": true,
+      "schema": {
+        "client_id": "int64",
+        "timestamp": "string",
+        "url": "int64"
+      },
+      "rows": 199451980,
+      "min_timestamp": "2022-06-23 00:10:00",
+      "max_timestamp": "2022-12-08 00:09:59",
+      "timestamp_scan_truncated": false
+    },
+    {
+      "name": "search_query",
+      "path": "data/synerise_dataset/search_query.parquet",
+      "exists": true,
+      "schema": {
+        "client_id": "int64",
+        "timestamp": "string",
+        "query": "string"
+      },
+      "rows": 13223769,
+      "min_timestamp": "2022-06-23 00:10:00",
+      "max_timestamp": "2022-12-08 00:09:55",
+      "timestamp_scan_truncated": false
+    },
+    {
+      "name": "product_properties",
+      "path": "data/synerise_dataset/product_properties.parquet",
+      "exists": true,
+      "schema": {
+        "sku": "int64",
+        "category": "int64",
+        "price": "int64",
+        "name": "string"
+      }
+    }
+  ],
+  "global_min_timestamp": "2022-06-23 00:10:00",
+  "global_max_timestamp": "2022-12-08 00:09:59",
+  "suggested_windows": "pre:2022-06-23:2022-10-10,gap:2022-10-10:2022-10-23,val:2022-10-23:2022-11-12,test:2022-11-12:2022-12-09",
+  "runtime_seconds": 41.04770565032959
+}

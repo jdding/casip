@@ -1,0 +1,5 @@
+observed,ci_low,ci_high,p_boot_le_zero,metric
+0,0.0,0.0,1.0,net@10
+31,7.0,55.0,0.0065,net@50
+46,23.975,67.0,0.0,net@100
+24,13.0,35.0,0.0,net@500

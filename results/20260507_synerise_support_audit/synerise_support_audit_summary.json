@@ -1,0 +1,170 @@
+{
+  "args": {
+    "input_dir": "data/synerise_dataset",
+    "output_dir": "results/20260507_synerise_support_audit",
+    "batch_size": 1000000,
+    "max_rows_per_file": 0,
+    "windows": "pre:2022-06-23:2022-10-10,gap:2022-10-10:2022-10-23,val:2022-10-23:2022-11-12,test:2022-11-12:2022-12-09",
+    "gate": "pre_any_gap_silent_val_proxy_test_buy",
+    "source_topk_per_bucket": 200,
+    "name_prefix_tokens": 4,
+    "max_users": 0
+  },
+  "inputs": {
+    "events": {
+      "product_buy": "data/synerise_dataset/product_buy.parquet",
+      "add_to_cart": "data/synerise_dataset/add_to_cart.parquet",
+      "remove_from_cart": "data/synerise_dataset/remove_from_cart.parquet",
+      "page_visit": "data/synerise_dataset/page_visit.parquet",
+      "search_query": "data/synerise_dataset/search_query.parquet"
+    },
+    "product_properties": "data/synerise_dataset/product_properties.parquet"
+  },
+  "provenance": {
+    "cwd": "<repo-root>",
+    "argv": [
+      "scripts/train_agknet/synerise_no_training_support_audit.py",
+      "--input-dir",
+      "data/synerise_dataset",
+      "--output-dir",
+      "results/20260507_synerise_support_audit",
+      "--batch-size",
+      "1000000",
+      "--windows",
+      "pre:2022-06-23:2022-10-10,gap:2022-10-10:2022-10-23,val:2022-10-23:2022-11-12,test:2022-11-12:2022-12-09"
+    ],
+    "hostname": "<local-host>",
+    "python": "3.9.6"
+  },
+  "windows": [
+    {
+      "name": "pre",
+      "start": "2022-06-23 00:00:00",
+      "end": "2022-10-10 00:00:00"
+    },
+    {
+      "name": "gap",
+      "start": "2022-10-10 00:00:00",
+      "end": "2022-10-23 00:00:00"
+    },
+    {
+      "name": "val",
+      "start": "2022-10-23 00:00:00",
+      "end": "2022-11-12 00:00:00"
+    },
+    {
+      "name": "test",
+      "start": "2022-11-12 00:00:00",
+      "end": "2022-12-09 00:00:00"
+    }
+  ],
+  "unique_users_in_windows": 22298361,
+  "gate_users": 17465,
+  "users_eval": 17465,
+  "rows_seen": {
+    "product_buy": 2318502,
+    "add_to_cart": 7541117,
+    "remove_from_cart": 2688894,
+    "page_visit": 199451980,
+    "search_query": 13223769
+  },
+  "rows_used_in_windows": {
+    "product_buy": 2318502,
+    "add_to_cart": 7541117,
+    "remove_from_cart": 2688894,
+    "page_visit": 199451980,
+    "search_query": 13223769
+  },
+  "event_counts_in_windows": {
+    "product_buy": 2318502,
+    "add_to_cart": 7541117,
+    "remove_from_cart": 2688894,
+    "page_visit": 199451980,
+    "search_query": 13223769
+  },
+  "source_hits": [
+    {
+      "source": "existing_user_replay",
+      "hit@10": 1507,
+      "hit@50": 1629,
+      "hit@100": 1630,
+      "hit@500": 1631
+    },
+    {
+      "source": "global_deployable_popularity",
+      "hit@10": 155,
+      "hit@50": 383,
+      "hit@100": 571,
+      "hit@500": 1388
+    },
+    {
+      "source": "bridge_category",
+      "hit@10": 563,
+      "hit@50": 1089,
+      "hit@100": 1332,
+      "hit@500": 1864
+    },
+    {
+      "source": "bridge_price",
+      "hit@10": 208,
+      "hit@50": 451,
+      "hit@100": 600,
+      "hit@500": 1012
+    },
+    {
+      "source": "bridge_category_price",
+      "hit@10": 1127,
+      "hit@50": 1565,
+      "hit@100": 1696,
+      "hit@500": 1826
+    },
+    {
+      "source": "bridge_name_prefix",
+      "hit@10": 1334,
+      "hit@50": 1657,
+      "hit@100": 1736,
+      "hit@500": 1857
+    },
+    {
+      "source": "bridge_union_oracle",
+      "hit@10": 1629,
+      "hit@50": 2080,
+      "hit@100": 2263,
+      "hit@500": 2555
+    },
+    {
+      "source": "existing_plus_bridge_oracle",
+      "hit@10": 1826,
+      "hit@50": 2132,
+      "hit@100": 2284,
+      "hit@500": 2556
+    },
+    {
+      "source": "existing_plus_bridge_all",
+      "hit@10": 1560,
+      "hit@50": 1920,
+      "hit@100": 2038,
+      "hit@500": 2374
+    }
+  ],
+  "existing_miss_recovered": {
+    "bridge_category@10": 127,
+    "bridge_category@50": 280,
+    "bridge_category@100": 384,
+    "bridge_category@500": 609,
+    "bridge_category_price@10": 104,
+    "bridge_category_price@50": 148,
+    "bridge_category_price@100": 178,
+    "bridge_category_price@500": 214,
+    "bridge_name_prefix@10": 135,
+    "bridge_name_prefix@50": 151,
+    "bridge_name_prefix@100": 185,
+    "bridge_name_prefix@500": 250,
+    "bridge_price@10": 52,
+    "bridge_price@50": 104,
+    "bridge_price@100": 148,
+    "bridge_price@500": 268
+  },
+  "decision": "PASS: bridge sources expand no-training support beyond existing replay.",
+  "runtime_seconds": 304.88636016845703
+}

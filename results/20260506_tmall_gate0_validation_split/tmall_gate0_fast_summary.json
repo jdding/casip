@@ -1,0 +1,400 @@
+{
+  "args": {
+    "input_dir": "data/tmall",
+    "user_log": "",
+    "train_labels": "",
+    "test_labels": "",
+    "output_dir": "results/20260506_tmall_gate0_validation_split",
+    "chunksize": 1000000,
+    "max_rows": 0,
+    "windows": "pre:501:1001,gap:1001:1101,val:1101:1106,test:1106:1111"
+  },
+  "inputs": {
+    "user_log": "data/tmall/data_format1/user_log_format1.csv",
+    "train_labels": "data/tmall/data_format1/train_format1.csv",
+    "test_labels": "data/tmall/data_format1/test_format1.csv"
+  },
+  "provenance": {
+    "cwd": "<repo-root>",
+    "argv": [
+      "scripts/train_agknet/tmall_gate0_fast_probe.py",
+      "--input-dir",
+      "data/tmall",
+      "--output-dir",
+      "results/20260506_tmall_gate0_validation_split",
+      "--chunksize",
+      "1000000",
+      "--windows",
+      "pre:501:1001,gap:1001:1101,val:1101:1106,test:1106:1111"
+    ],
+    "hostname": "<local-host>",
+    "python": "3.9.6"
+  },
+  "windows": [
+    {
+      "name": "pre",
+      "start": 501,
+      "end": 1001
+    },
+    {
+      "name": "gap",
+      "start": 1001,
+      "end": 1101
+    },
+    {
+      "name": "val",
+      "start": 1101,
+      "end": 1106
+    },
+    {
+      "name": "test",
+      "start": 1106,
+      "end": 1111
+    }
+  ],
+  "action_mapping": {
+    "0": "click",
+    "1": "cart",
+    "2": "purchase",
+    "3": "favorite"
+  },
+  "rows_seen": 54925330,
+  "rows_used_in_windows": 44342651,
+  "label_rows": {
+    "train_rows": 260864,
+    "train_positive_labels": 15952,
+    "train_merchants": 1993,
+    "train_users": 212062,
+    "test_rows": 261477,
+    "test_merchants": 1993,
+    "test_users": 212108
+  },
+  "action_counts": {
+    "cart": 62025,
+    "click": 39362563,
+    "favorite": 2849273,
+    "purchase": 2068790
+  },
+  "window_action_counts": {
+    "gap:cart": 11120,
+    "gap:click": 7624845,
+    "gap:favorite": 619938,
+    "gap:purchase": 442844,
+    "pre:cart": 14831,
+    "pre:click": 22588516,
+    "pre:favorite": 1525483,
+    "pre:purchase": 1495659,
+    "test:cart": 26030,
+    "test:click": 6249625,
+    "test:favorite": 447823,
+    "test:purchase": 67427,
+    "val:cart": 10044,
+    "val:click": 2899577,
+    "val:favorite": 256029,
+    "val:purchase": 62860
+  },
+  "unique_users_in_windows": 424170,
+  "gate_counts": [
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_purchase",
+      "users": 1648,
+      "mean_pre_all": 29.48483009708738,
+      "mean_gap_all": 0.0,
+      "mean_val_proxy": 10.45752427184466,
+      "mean_test_purchase": 1.5503640776699028
+    },
+    {
+      "gate": "pre_any_gap_low3_val_proxy_test_purchase",
+      "users": 3871,
+      "mean_pre_all": 33.87160940325497,
+      "mean_gap_all": 1.1113407388271765,
+      "mean_val_proxy": 10.12115732368897,
+      "mean_test_purchase": 1.5406871609403254
+    },
+    {
+      "gate": "pre_purchase_gap_silent_val_proxy_test_purchase",
+      "users": 1186,
+      "mean_pre_all": 37.44097807757167,
+      "mean_gap_all": 0.0,
+      "mean_val_proxy": 10.449409780775717,
+      "mean_test_purchase": 1.5741989881956155
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cartfav_test_purchase",
+      "users": 481,
+      "mean_pre_all": 34.014553014553016,
+      "mean_gap_all": 0.0,
+      "mean_val_proxy": 16.103950103950105,
+      "mean_test_purchase": 1.6465696465696467
+    }
+  ],
+  "target_level_gate_counts": [
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_purchase",
+      "level": "item",
+      "users": 1648,
+      "test_purchase_targets": 1844,
+      "seen_pre_or_val_targets": 32339,
+      "test_target_oov_vs_user_history": 1044,
+      "test_target_oov_rate_vs_user_history": 0.5661605206073753
+    },
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_purchase",
+      "level": "merchant",
+      "users": 1648,
+      "test_purchase_targets": 1188,
+      "seen_pre_or_val_targets": 4070,
+      "test_target_oov_vs_user_history": 129,
+      "test_target_oov_rate_vs_user_history": 0.10858585858585859
+    },
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_purchase",
+      "level": "category",
+      "users": 1648,
+      "test_purchase_targets": 308,
+      "seen_pre_or_val_targets": 771,
+      "test_target_oov_vs_user_history": 12,
+      "test_target_oov_rate_vs_user_history": 0.03896103896103896
+    },
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_purchase",
+      "level": "brand",
+      "users": 1648,
+      "test_purchase_targets": 1057,
+      "seen_pre_or_val_targets": 3996,
+      "test_target_oov_vs_user_history": 139,
+      "test_target_oov_rate_vs_user_history": 0.1315042573320719
+    },
+    {
+      "gate": "pre_any_gap_low3_val_proxy_test_purchase",
+      "level": "item",
+      "users": 3871,
+      "test_purchase_targets": 3768,
+      "seen_pre_or_val_targets": 69336,
+      "test_target_oov_vs_user_history": 1762,
+      "test_target_oov_rate_vs_user_history": 0.4676220806794055
+    },
+    {
+      "gate": "pre_any_gap_low3_val_proxy_test_purchase",
+      "level": "merchant",
+      "users": 3871,
+      "test_purchase_targets": 1973,
+      "seen_pre_or_val_targets": 4699,
+      "test_target_oov_vs_user_history": 69,
+      "test_target_oov_rate_vs_user_history": 0.03497212366953877
+    },
+    {
+      "gate": "pre_any_gap_low3_val_proxy_test_purchase",
+      "level": "category",
+      "users": 3871,
+      "test_purchase_targets": 446,
+      "seen_pre_or_val_targets": 965,
+      "test_target_oov_vs_user_history": 7,
+      "test_target_oov_rate_vs_user_history": 0.01569506726457399
+    },
+    {
+      "gate": "pre_any_gap_low3_val_proxy_test_purchase",
+      "level": "brand",
+      "users": 3871,
+      "test_purchase_targets": 1766,
+      "seen_pre_or_val_targets": 4964,
+      "test_target_oov_vs_user_history": 104,
+      "test_target_oov_rate_vs_user_history": 0.05889014722536806
+    },
+    {
+      "gate": "pre_purchase_gap_silent_val_proxy_test_purchase",
+      "level": "item",
+      "users": 1186,
+      "test_purchase_targets": 1393,
+      "seen_pre_or_val_targets": 28155,
+      "test_target_oov_vs_user_history": 823,
+      "test_target_oov_rate_vs_user_history": 0.5908111988513999
+    },
+    {
+      "gate": "pre_purchase_gap_silent_val_proxy_test_purchase",
+      "level": "merchant",
+      "users": 1186,
+      "test_purchase_targets": 942,
+      "seen_pre_or_val_targets": 3843,
+      "test_target_oov_vs_user_history": 130,
+      "test_target_oov_rate_vs_user_history": 0.13800424628450106
+    },
+    {
+      "gate": "pre_purchase_gap_silent_val_proxy_test_purchase",
+      "level": "category",
+      "users": 1186,
+      "test_purchase_targets": 277,
+      "seen_pre_or_val_targets": 749,
+      "test_target_oov_vs_user_history": 10,
+      "test_target_oov_rate_vs_user_history": 0.036101083032490974
+    },
+    {
+      "gate": "pre_purchase_gap_silent_val_proxy_test_purchase",
+      "level": "brand",
+      "users": 1186,
+      "test_purchase_targets": 848,
+      "seen_pre_or_val_targets": 3755,
+      "test_target_oov_vs_user_history": 123,
+      "test_target_oov_rate_vs_user_history": 0.14504716981132076
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cartfav_test_purchase",
+      "level": "item",
+      "users": 481,
+      "test_purchase_targets": 623,
+      "seen_pre_or_val_targets": 13241,
+      "test_target_oov_vs_user_history": 384,
+      "test_target_oov_rate_vs_user_history": 0.6163723916532905
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cartfav_test_purchase",
+      "level": "merchant",
+      "users": 481,
+      "test_purchase_targets": 452,
+      "seen_pre_or_val_targets": 2732,
+      "test_target_oov_vs_user_history": 106,
+      "test_target_oov_rate_vs_user_history": 0.2345132743362832
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cartfav_test_purchase",
+      "level": "category",
+      "users": 481,
+      "test_purchase_targets": 190,
+      "seen_pre_or_val_targets": 595,
+      "test_target_oov_vs_user_history": 8,
+      "test_target_oov_rate_vs_user_history": 0.042105263157894736
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cartfav_test_purchase",
+      "level": "brand",
+      "users": 481,
+      "test_purchase_targets": 418,
+      "seen_pre_or_val_targets": 2594,
+      "test_target_oov_vs_user_history": 96,
+      "test_target_oov_rate_vs_user_history": 0.22966507177033493
+    }
+  ],
+  "target_turnover": [
+    {
+      "pair": "pre_to_val",
+      "level": "item",
+      "left_targets": 220955,
+      "right_targets": 20876,
+      "overlap": 11779,
+      "jaccard": 0.05120146749430564,
+      "right_new_vs_left": 9097,
+      "right_new_rate": 0.435763556236827
+    },
+    {
+      "pair": "pre_to_val",
+      "level": "merchant",
+      "left_targets": 4907,
+      "right_targets": 4271,
+      "overlap": 4205,
+      "jaccard": 0.8455660567062135,
+      "right_new_vs_left": 66,
+      "right_new_rate": 0.015453055490517443
+    },
+    {
+      "pair": "pre_to_val",
+      "level": "category",
+      "left_targets": 1265,
+      "right_targets": 844,
+      "overlap": 834,
+      "jaccard": 0.6541176470588236,
+      "right_new_vs_left": 10,
+      "right_new_rate": 0.011848341232227487
+    },
+    {
+      "pair": "pre_to_val",
+      "level": "brand",
+      "left_targets": 6290,
+      "right_targets": 4041,
+      "overlap": 3910,
+      "jaccard": 0.6089394175362093,
+      "right_new_vs_left": 131,
+      "right_new_rate": 0.03241771838653799
+    },
+    {
+      "pair": "pre_to_test",
+      "level": "item",
+      "left_targets": 220955,
+      "right_targets": 22348,
+      "overlap": 11747,
+      "jaccard": 0.05073070877023269,
+      "right_new_vs_left": 10601,
+      "right_new_rate": 0.4743601217111151
+    },
+    {
+      "pair": "pre_to_test",
+      "level": "merchant",
+      "left_targets": 4907,
+      "right_targets": 4285,
+      "overlap": 4215,
+      "jaccard": 0.8468957203134418,
+      "right_new_vs_left": 70,
+      "right_new_rate": 0.01633605600933489
+    },
+    {
+      "pair": "pre_to_test",
+      "level": "category",
+      "left_targets": 1265,
+      "right_targets": 852,
+      "overlap": 843,
+      "jaccard": 0.6616954474097331,
+      "right_new_vs_left": 9,
+      "right_new_rate": 0.01056338028169014
+    },
+    {
+      "pair": "pre_to_test",
+      "level": "brand",
+      "left_targets": 6290,
+      "right_targets": 4117,
+      "overlap": 3966,
+      "jaccard": 0.615742897065673,
+      "right_new_vs_left": 151,
+      "right_new_rate": 0.03667719213019189
+    },
+    {
+      "pair": "val_to_test",
+      "level": "item",
+      "left_targets": 20876,
+      "right_targets": 22348,
+      "overlap": 7654,
+      "jaccard": 0.2151813325836379,
+      "right_new_vs_left": 14694,
+      "right_new_rate": 0.6575085018793628
+    },
+    {
+      "pair": "val_to_test",
+      "level": "merchant",
+      "left_targets": 4271,
+      "right_targets": 4285,
+      "overlap": 3887,
+      "jaccard": 0.8325123152709359,
+      "right_new_vs_left": 398,
+      "right_new_rate": 0.09288214702450408
+    },
+    {
+      "pair": "val_to_test",
+      "level": "category",
+      "left_targets": 844,
+      "right_targets": 852,
+      "overlap": 734,
+      "jaccard": 0.762993762993763,
+      "right_new_vs_left": 118,
+      "right_new_rate": 0.13849765258215962
+    },
+    {
+      "pair": "val_to_test",
+      "level": "brand",
+      "left_targets": 4041,
+      "right_targets": 4117,
+      "overlap": 3492,
+      "jaccard": 0.7483926275182169,
+      "right_new_vs_left": 625,
+      "right_new_rate": 0.15180957007529755
+    }
+  ],
+  "runtime_seconds": 64.09038305282593
+}

@@ -1,0 +1,552 @@
+{
+  "args": {
+    "artifact": "<external-workspace>",
+    "output_dir": "<external-workspace>",
+    "ks": "10,50,100,500",
+    "sources": "global_popularity,context_feedback_replay,seen_product_replay,brand_overlap_seen_allowed,brand_replacement_unseen,category_overlap_seen_allowed,category_or_brand_replacement_unseen,category_code_family_replacement_unseen",
+    "source_topk": 500,
+    "val_context_frac": 0.5,
+    "selection_k": 10,
+    "max_users": 0,
+    "workers": 16
+  },
+  "artifact_args": {
+    "input": "<external-data-root>",
+    "output_dir": "results/20260505_rees46_protocol_parallel_all_protocol",
+    "chunksize": 1000000,
+    "windows": "pre:2019-10-01:2019-12-01,gap:2019-12-01:2020-02-01,val:2020-02-01:2020-03-15,test:2020-03-15:2020-05-01",
+    "category_prefixes": "",
+    "min_pre_events": 1,
+    "min_val_implicit": 1,
+    "min_test_purchases": 1,
+    "top_pop_items": 5000,
+    "max_rows": 0,
+    "max_strict_users": 0,
+    "workers": 6
+  },
+  "n_users_total": 16954,
+  "n_val_users": 14776,
+  "n_test_users": 16954,
+  "n_configs": 48,
+  "selected_by_val": "global_popularity_0.3__context_feedback_replay_0.7",
+  "selected_weights": {
+    "global_popularity": 0.3,
+    "context_feedback_replay": 0.7
+  },
+  "selected_val_summary": {
+    "n_users": 14776,
+    "hit_counts": {
+      "hit@10": 9053,
+      "hit@50": 10245,
+      "hit@100": 10594,
+      "hit@500": 11587
+    },
+    "hit_rates": {
+      "hit@10": 0.6126827287493233,
+      "hit@50": 0.6933540877097997,
+      "hit@100": 0.7169734704926909,
+      "hit@500": 0.7841770438548998
+    },
+    "mean_first_hit_rank": 27.131095192888584
+  },
+  "selected_test_summary": {
+    "n_users": 16954,
+    "hit_counts": {
+      "hit@10": 2910,
+      "hit@50": 5211,
+      "hit@100": 6199,
+      "hit@500": 8517
+    },
+    "hit_rates": {
+      "hit@10": 0.17164091069953993,
+      "hit@50": 0.3073610947269081,
+      "hit@100": 0.3656364279815973,
+      "hit@500": 0.5023593252329833
+    },
+    "mean_first_hit_rank": 85.51414817423975
+  },
+  "top_val_configs": {
+    "global_popularity_0.3__context_feedback_replay_0.7": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 9053,
+        "hit@50": 10245,
+        "hit@100": 10594,
+        "hit@500": 11587
+      },
+      "hit_rates": {
+        "hit@10": 0.6126827287493233,
+        "hit@50": 0.6933540877097997,
+        "hit@100": 0.7169734704926909,
+        "hit@500": 0.7841770438548998
+      },
+      "mean_first_hit_rank": 27.131095192888584
+    },
+    "global_popularity_0.5__context_feedback_replay_0.5": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 8740,
+        "hit@50": 10229,
+        "hit@100": 10594,
+        "hit@500": 11587
+      },
+      "hit_rates": {
+        "hit@10": 0.5914997292907418,
+        "hit@50": 0.6922712506767732,
+        "hit@100": 0.7169734704926909,
+        "hit@500": 0.7841770438548998
+      },
+      "mean_first_hit_rank": 28.098731336843013
+    },
+    "context_feedback_replay": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 8686,
+        "hit@50": 8946,
+        "hit@100": 8948,
+        "hit@500": 8948
+      },
+      "hit_rates": {
+        "hit@10": 0.5878451543042772,
+        "hit@50": 0.6054412560909583,
+        "hit@100": 0.6055766107200866,
+        "hit@500": 0.6055766107200866
+      },
+      "mean_first_hit_rank": 1.6090746535538667
+    },
+    "global_popularity__context_feedback_replay__category_or_brand_replacement_unseen__equal": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 8110,
+        "hit@50": 10286,
+        "hit@100": 10683,
+        "hit@500": 11744
+      },
+      "hit_rates": {
+        "hit@10": 0.5488630211153221,
+        "hit@50": 0.6961288576069301,
+        "hit@100": 0.722996751488901,
+        "hit@500": 0.7948023822414727
+      },
+      "mean_first_hit_rank": 31.720963896457764
+    },
+    "seen_product_replay": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 8038,
+        "hit@50": 9368,
+        "hit@100": 9413,
+        "hit@500": 9417
+      },
+      "hit_rates": {
+        "hit@10": 0.5439902544667028,
+        "hit@50": 0.634001082837033,
+        "hit@100": 0.6370465619924202,
+        "hit@500": 0.6373172712506767
+      },
+      "mean_first_hit_rank": 4.946373579696294
+    },
+    "global_popularity_0.7__context_feedback_replay_0.3": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 8028,
+        "hit@50": 10194,
+        "hit@100": 10582,
+        "hit@500": 11587
+      },
+      "hit_rates": {
+        "hit@10": 0.5433134813210612,
+        "hit@50": 0.6899025446670276,
+        "hit@100": 0.716161342717921,
+        "hit@500": 0.7841770438548998
+      },
+      "mean_first_hit_rank": 30.0910503150082
+    },
+    "global_popularity_0.3__seen_product_replay_0.7": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 7754,
+        "hit@50": 10332,
+        "hit@100": 10785,
+        "hit@500": 11741
+      },
+      "hit_rates": {
+        "hit@10": 0.5247698971304818,
+        "hit@50": 0.6992420140768815,
+        "hit@100": 0.7298998375744451,
+        "hit@500": 0.7945993502977802
+      },
+      "mean_first_hit_rank": 29.37841751128524
+    },
+    "seen_product_replay_0.7__brand_replacement_unseen_0.3": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 7696,
+        "hit@50": 10354,
+        "hit@100": 10754,
+        "hit@500": 11379
+      },
+      "hit_rates": {
+        "hit@10": 0.5208446128857607,
+        "hit@50": 0.7007309149972929,
+        "hit@100": 0.7278018408229562,
+        "hit@500": 0.7701001624255549
+      },
+      "mean_first_hit_rank": 22.335969768872484
+    },
+    "seen_product_replay_0.7__category_or_brand_replacement_unseen_0.3": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 7658,
+        "hit@50": 10318,
+        "hit@100": 10750,
+        "hit@500": 11491
+      },
+      "hit_rates": {
+        "hit@10": 0.5182728749323227,
+        "hit@50": 0.6982945316729832,
+        "hit@100": 0.7275311315646995,
+        "hit@500": 0.7776800216567407
+      },
+      "mean_first_hit_rank": 25.03454877730398
+    },
+    "global_popularity_0.5__seen_product_replay_0.5": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 7023,
+        "hit@50": 10223,
+        "hit@100": 10767,
+        "hit@500": 11741
+      },
+      "hit_rates": {
+        "hit@10": 0.4752977801840823,
+        "hit@50": 0.6918651867893882,
+        "hit@100": 0.7286816459122902,
+        "hit@500": 0.7945993502977802
+      },
+      "mean_first_hit_rank": 31.4658035942424
+    },
+    "seen_product_replay_0.5__brand_replacement_unseen_0.5": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 6994,
+        "hit@50": 10242,
+        "hit@100": 10730,
+        "hit@500": 11379
+      },
+      "hit_rates": {
+        "hit@10": 0.4733351380617217,
+        "hit@50": 0.6931510557661072,
+        "hit@100": 0.7261775852734164,
+        "hit@500": 0.7701001624255549
+      },
+      "mean_first_hit_rank": 24.86413568854908
+    },
+    "seen_product_replay_0.5__category_or_brand_replacement_unseen_0.5": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 6942,
+        "hit@50": 10204,
+        "hit@100": 10726,
+        "hit@500": 11491
+      },
+      "hit_rates": {
+        "hit@10": 0.46981591770438547,
+        "hit@50": 0.6905793178126692,
+        "hit@100": 0.7259068760151597,
+        "hit@500": 0.7776800216567407
+      },
+      "mean_first_hit_rank": 27.567661648246453
+    },
+    "seen_product_replay__brand_overlap_seen_allowed__category_or_brand_replacement_unseen__equal": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 6102,
+        "hit@50": 10021,
+        "hit@100": 10713,
+        "hit@500": 11522
+      },
+      "hit_rates": {
+        "hit@10": 0.4129669734704927,
+        "hit@50": 0.6781943692474283,
+        "hit@100": 0.7250270709258256,
+        "hit@500": 0.7797780184082296
+      },
+      "mean_first_hit_rank": 29.649366429439333
+    },
+    "global_popularity__seen_product_replay__brand_replacement_unseen__equal": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 6022,
+        "hit@50": 10131,
+        "hit@100": 10843,
+        "hit@500": 11908
+      },
+      "hit_rates": {
+        "hit@10": 0.40755278830536007,
+        "hit@50": 0.6856388738494856,
+        "hit@100": 0.7338251218191663,
+        "hit@500": 0.8059014618299946
+      },
+      "mean_first_hit_rank": 35.37168290225059
+    },
+    "global_popularity_0.7__seen_product_replay_0.3": {
+      "n_users": 14776,
+      "hit_counts": {
+        "hit@10": 5856,
+        "hit@50": 9838,
+        "hit@100": 10674,
+        "hit@500": 11740
+      },
+      "hit_rates": {
+        "hit@10": 0.3963183540877098,
+        "hit@50": 0.6658094206821873,
+        "hit@100": 0.7223876556578235,
+        "hit@500": 0.794531672983216
+      },
+      "mean_first_hit_rank": 36.11550255536627
+    }
+  },
+  "top_test_configs_oracle_diagnostic": {
+    "global_popularity_0.5__context_feedback_replay_0.5": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2934,
+        "hit@50": 5208,
+        "hit@100": 6198,
+        "hit@500": 8517
+      },
+      "hit_rates": {
+        "hit@10": 0.17305650583932994,
+        "hit@50": 0.30718414533443433,
+        "hit@100": 0.3655774448507727,
+        "hit@500": 0.5023593252329833
+      },
+      "mean_first_hit_rank": 85.68615709756956
+    },
+    "global_popularity_0.3__context_feedback_replay_0.7": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2910,
+        "hit@50": 5211,
+        "hit@100": 6199,
+        "hit@500": 8517
+      },
+      "hit_rates": {
+        "hit@10": 0.17164091069953993,
+        "hit@50": 0.3073610947269081,
+        "hit@100": 0.3656364279815973,
+        "hit@500": 0.5023593252329833
+      },
+      "mean_first_hit_rank": 85.51414817423975
+    },
+    "global_popularity_0.7__context_feedback_replay_0.3": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2849,
+        "hit@50": 5158,
+        "hit@100": 6184,
+        "hit@500": 8517
+      },
+      "hit_rates": {
+        "hit@10": 0.1680429397192403,
+        "hit@50": 0.30423498879320515,
+        "hit@100": 0.3647516810192285,
+        "hit@500": 0.5023593252329833
+      },
+      "mean_first_hit_rank": 86.51872725137959
+    },
+    "global_popularity_0.5__seen_product_replay_0.5": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2730,
+        "hit@50": 5185,
+        "hit@100": 6252,
+        "hit@500": 8596
+      },
+      "hit_rates": {
+        "hit@10": 0.1610239471511148,
+        "hit@50": 0.3058275333254689,
+        "hit@100": 0.36876253391530023,
+        "hit@500": 0.5070189925681255
+      },
+      "mean_first_hit_rank": 86.30642159143788
+    },
+    "global_popularity_0.7__seen_product_replay_0.3": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2717,
+        "hit@50": 5137,
+        "hit@100": 6223,
+        "hit@500": 8595
+      },
+      "hit_rates": {
+        "hit@10": 0.1602571664503952,
+        "hit@50": 0.30299634304588885,
+        "hit@100": 0.3670520231213873,
+        "hit@500": 0.5069600094373009
+      },
+      "mean_first_hit_rank": 87.15823152995928
+    },
+    "global_popularity__context_feedback_replay__category_or_brand_replacement_unseen__equal": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2642,
+        "hit@50": 5073,
+        "hit@100": 6075,
+        "hit@500": 8560
+      },
+      "hit_rates": {
+        "hit@10": 0.15583343163855137,
+        "hit@50": 0.29922142267311547,
+        "hit@100": 0.3583225197593488,
+        "hit@500": 0.5048955998584405
+      },
+      "mean_first_hit_rank": 88.44719626168224
+    },
+    "seen_product_replay_0.5__category_or_brand_replacement_unseen_0.5": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2579,
+        "hit@50": 4523,
+        "hit@100": 5273,
+        "hit@500": 6745
+      },
+      "hit_rates": {
+        "hit@10": 0.15211749439660258,
+        "hit@50": 0.2667807007195942,
+        "hit@100": 0.3110180488380323,
+        "hit@500": 0.3978412174118202
+      },
+      "mean_first_hit_rank": 65.78443291326909
+    },
+    "global_popularity_0.3__seen_product_replay_0.7": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2575,
+        "hit@50": 5194,
+        "hit@100": 6253,
+        "hit@500": 8596
+      },
+      "hit_rates": {
+        "hit@10": 0.15188156187330423,
+        "hit@50": 0.3063583815028902,
+        "hit@100": 0.3688215170461248,
+        "hit@500": 0.5070189925681255
+      },
+      "mean_first_hit_rank": 86.43531875290833
+    },
+    "seen_product_replay_0.7__brand_replacement_unseen_0.3": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2571,
+        "hit@50": 4299,
+        "hit@100": 4903,
+        "hit@500": 5796
+      },
+      "hit_rates": {
+        "hit@10": 0.1516456293500059,
+        "hit@50": 0.25356847941488736,
+        "hit@100": 0.2891942904329362,
+        "hit@500": 0.34186622625928986
+      },
+      "mean_first_hit_rank": 49.22118702553485
+    },
+    "seen_product_replay_0.5__brand_replacement_unseen_0.5": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2557,
+        "hit@50": 4268,
+        "hit@100": 4894,
+        "hit@500": 5796
+      },
+      "hit_rates": {
+        "hit@10": 0.15081986551846172,
+        "hit@50": 0.25174000235932525,
+        "hit@100": 0.28866344225551493,
+        "hit@500": 0.34186622625928986
+      },
+      "mean_first_hit_rank": 49.84748102139407
+    },
+    "seen_product_replay_0.7__category_or_brand_replacement_unseen_0.3": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2552,
+        "hit@50": 4552,
+        "hit@100": 5275,
+        "hit@500": 6745
+      },
+      "hit_rates": {
+        "hit@10": 0.1505249498643388,
+        "hit@50": 0.26849121151350713,
+        "hit@100": 0.3111360150996815,
+        "hit@500": 0.3978412174118202
+      },
+      "mean_first_hit_rank": 65.35908080059303
+    },
+    "global_popularity__seen_product_replay__brand_replacement_unseen__equal": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2532,
+        "hit@50": 5080,
+        "hit@100": 6088,
+        "hit@500": 8484
+      },
+      "hit_rates": {
+        "hit@10": 0.14934528724784712,
+        "hit@50": 0.29963430458888757,
+        "hit@100": 0.35908930046006843,
+        "hit@500": 0.500412881915772
+      },
+      "mean_first_hit_rank": 85.42362093352192
+    },
+    "seen_product_replay__brand_overlap_seen_allowed__category_or_brand_replacement_unseen__equal": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2500,
+        "hit@50": 4497,
+        "hit@100": 5259,
+        "hit@500": 6764
+      },
+      "hit_rates": {
+        "hit@10": 0.14745782706146043,
+        "hit@50": 0.265247139318155,
+        "hit@100": 0.31019228500648816,
+        "hit@500": 0.39896189689748734
+      },
+      "mean_first_hit_rank": 68.80337078651685
+    },
+    "seen_product_replay_0.3__category_or_brand_replacement_unseen_0.7": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2425,
+        "hit@50": 4453,
+        "hit@100": 5228,
+        "hit@500": 6743
+      },
+      "hit_rates": {
+        "hit@10": 0.1430340922496166,
+        "hit@50": 0.2626518815618733,
+        "hit@100": 0.30836380795092605,
+        "hit@500": 0.39772325115017104
+      },
+      "mean_first_hit_rank": 67.52469227346879
+    },
+    "global_popularity": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2394,
+        "hit@50": 4320,
+        "hit@100": 5366,
+        "hit@500": 7936
+      },
+      "hit_rates": {
+        "hit@10": 0.1412056151940545,
+        "hit@50": 0.2548071251622036,
+        "hit@100": 0.3165034800047187,
+        "hit@500": 0.46809012622389995
+      },
+      "mean_first_hit_rank": 99.68321572580645
+    }
+  }
+}

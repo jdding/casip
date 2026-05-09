@@ -1,0 +1,117 @@
+{
+  "args": {
+    "input_dir": "data/tmall",
+    "output_dir": "results/20260506_tmall_support_audit_v2",
+    "chunksize": 1000000,
+    "windows": "pre:501:1001,gap:1001:1101,val:1101:1111,test:1111:1112",
+    "gate": "pre_any_gap_silent_val_proxy_test_purchase",
+    "source_topk_per_bucket": 200,
+    "max_users": 0
+  },
+  "provenance": {
+    "cwd": "<repo-root>",
+    "argv": [
+      "scripts/train_agknet/tmall_no_training_support_audit.py",
+      "--input-dir",
+      "data/tmall",
+      "--output-dir",
+      "results/20260506_tmall_support_audit_v2",
+      "--chunksize",
+      "1000000",
+      "--windows",
+      "pre:501:1001,gap:1001:1101,val:1101:1111,test:1111:1112",
+      "--gate",
+      "pre_any_gap_silent_val_proxy_test_purchase"
+    ],
+    "hostname": "<local-host>",
+    "python": "3.9.6"
+  },
+  "rows_seen": 54925330,
+  "rows_used_in_windows": 54925284,
+  "gate_users": 45574,
+  "users_eval": 45574,
+  "source_hits": [
+    {
+      "source": "existing_user_replay",
+      "hit@10": 21220,
+      "hit@50": 24853,
+      "hit@100": 25010,
+      "hit@500": 25034
+    },
+    {
+      "source": "global_deployable_popularity",
+      "hit@10": 248,
+      "hit@50": 1290,
+      "hit@100": 2169,
+      "hit@500": 7172
+    },
+    {
+      "source": "semantic_category_val_proxy",
+      "hit@10": 3660,
+      "hit@50": 8601,
+      "hit@100": 11468,
+      "hit@500": 18043
+    },
+    {
+      "source": "semantic_brand_val_proxy",
+      "hit@10": 9288,
+      "hit@50": 16834,
+      "hit@100": 19846,
+      "hit@500": 24505
+    },
+    {
+      "source": "semantic_category_brand_val_proxy",
+      "hit@10": 13179,
+      "hit@50": 21076,
+      "hit@100": 23301,
+      "hit@500": 25843
+    },
+    {
+      "source": "semantic_merchant_val_proxy",
+      "hit@10": 9960,
+      "hit@50": 17528,
+      "hit@100": 20468,
+      "hit@500": 24788
+    },
+    {
+      "source": "semantic_union_oracle",
+      "hit@10": 15282,
+      "hit@50": 22848,
+      "hit@100": 25234,
+      "hit@500": 28236
+    },
+    {
+      "source": "existing_plus_semantic_oracle",
+      "hit@10": 23775,
+      "hit@50": 27087,
+      "hit@100": 27734,
+      "hit@500": 28853
+    },
+    {
+      "source": "existing_plus_semantic_all",
+      "hit@10": 19289,
+      "hit@50": 23460,
+      "hit@100": 24826,
+      "hit@500": 28159
+    }
+  ],
+  "existing_miss_recovered": {
+    "semantic_brand_val_proxy@10": 1258,
+    "semantic_brand_val_proxy@50": 1120,
+    "semantic_brand_val_proxy@100": 1374,
+    "semantic_brand_val_proxy@500": 1958,
+    "semantic_category_brand_val_proxy@10": 1842,
+    "semantic_category_brand_val_proxy@50": 1173,
+    "semantic_category_brand_val_proxy@100": 1325,
+    "semantic_category_brand_val_proxy@500": 1660,
+    "semantic_category_val_proxy@10": 643,
+    "semantic_category_val_proxy@50": 1024,
+    "semantic_category_val_proxy@100": 1464,
+    "semantic_category_val_proxy@500": 2505,
+    "semantic_merchant_val_proxy@10": 1326,
+    "semantic_merchant_val_proxy@50": 1079,
+    "semantic_merchant_val_proxy@100": 1299,
+    "semantic_merchant_val_proxy@500": 1760
+  },
+  "runtime_seconds": 190.70963501930237
+}

@@ -1,0 +1,279 @@
+{
+  "args": {
+    "artifact": "<external-data-root>",
+    "output_dir": "results/20260508_rees46_prm_slate_reranker_full_fast",
+    "model": "prm",
+    "semantic_source": "semid_category_brand_context",
+    "existing_weights": "",
+    "ks": [
+      10,
+      50,
+      100,
+      500
+    ],
+    "selection_k": 100,
+    "val_context_frac": 0.5,
+    "val_target_types": "",
+    "source_topk": 500,
+    "existing_pool_k": 500,
+    "semantic_pool_k": 500,
+    "slate_len": 1000,
+    "bucket_topk": 500,
+    "event_view_weight": 1.0,
+    "event_cart_weight": 3.0,
+    "hidden_dim": 64,
+    "layers": 1,
+    "dropout": 0.1,
+    "epochs": 6,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip": 5.0,
+    "batch_size": 8,
+    "eval_batch_size": 16,
+    "dev_frac": 0.2,
+    "zero_slate_keep_prob": 0.1,
+    "workers": 16,
+    "worker_chunksize": 32,
+    "max_users": 0,
+    "device": "cuda",
+    "seed": 42
+  },
+  "feature_names": [
+    "existing_recip_rank",
+    "existing_present",
+    "semantic_recip_rank",
+    "semantic_present",
+    "both_sources",
+    "semantic_only",
+    "existing_only",
+    "semantic_promotes_rank_key",
+    "candidate_order_recip",
+    "seen_product",
+    "history_product",
+    "context_product",
+    "source_count"
+  ],
+  "n_train_examples": 9992,
+  "n_dev_examples": 2956,
+  "n_test_examples": 16954,
+  "selected_epoch": 4,
+  "dev_summary": {
+    "n_users": 2956,
+    "hit_counts": {
+      "hit@10": 1864,
+      "hit@50": 2127,
+      "hit@100": 2207,
+      "hit@500": 2395
+    },
+    "hit_rates": {
+      "hit@10": 0.6305818673883626,
+      "hit@50": 0.719553450608931,
+      "hit@100": 0.746617050067659,
+      "hit@500": 0.8102165087956699
+    },
+    "gross_recovery": {
+      "@10": 73,
+      "@50": 133,
+      "@100": 130,
+      "@500": 117
+    },
+    "cannibalized_hit": {
+      "@10": 43,
+      "@50": 40,
+      "@100": 43,
+      "@500": 20
+    },
+    "net_gain": {
+      "@10": 30,
+      "@50": 93,
+      "@100": 87,
+      "@500": 97
+    },
+    "cannibalization_ratio": {
+      "@10": 0.589041095890411,
+      "@50": 0.3007518796992481,
+      "@100": 0.33076923076923076,
+      "@500": 0.17094017094017094
+    },
+    "mean_first_hit_rank": 25.32108559498956,
+    "latency_seconds_total": 1.8691573664546013,
+    "latency_ms_per_user": 0.6323265786382277
+  },
+  "test_summary": {
+    "n_users": 16954,
+    "hit_counts": {
+      "hit@10": 2654,
+      "hit@50": 4888,
+      "hit@100": 5866,
+      "hit@500": 8474
+    },
+    "hit_rates": {
+      "hit@10": 0.15654122920844638,
+      "hit@50": 0.2883095434705674,
+      "hit@100": 0.34599504541701076,
+      "hit@500": 0.49982305060752624
+    },
+    "gross_recovery": {
+      "@10": 328,
+      "@50": 460,
+      "@100": 489,
+      "@500": 296
+    },
+    "cannibalized_hit": {
+      "@10": 718,
+      "@50": 891,
+      "@100": 1015,
+      "@500": 638
+    },
+    "net_gain": {
+      "@10": -390,
+      "@50": -431,
+      "@100": -526,
+      "@500": -342
+    },
+    "cannibalization_ratio": {
+      "@10": 2.1890243902439024,
+      "@50": 1.9369565217391305,
+      "@100": 2.0756646216768915,
+      "@500": 2.1554054054054053
+    },
+    "mean_first_hit_rank": 95.10726929431202,
+    "latency_seconds_total": 11.523054618388414,
+    "latency_ms_per_user": 0.6796658380552326
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5680584367200601,
+      "dev_hit_counts": {
+        "hit@10": 1866,
+        "hit@50": 2117,
+        "hit@100": 2197,
+        "hit@500": 2395
+      },
+      "dev_net_gain": {
+        "@10": 32,
+        "@50": 83,
+        "@100": 77,
+        "@500": 97
+      },
+      "dev_cannibalization_ratio": {
+        "@10": 0.5616438356164384,
+        "@50": 0.3805970149253731,
+        "@100": 0.4253731343283582,
+        "@500": 0.19166666666666668
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5231838693157781,
+      "dev_hit_counts": {
+        "hit@10": 1865,
+        "hit@50": 2127,
+        "hit@100": 2202,
+        "hit@500": 2399
+      },
+      "dev_net_gain": {
+        "@10": 31,
+        "@50": 93,
+        "@100": 82,
+        "@500": 101
+      },
+      "dev_cannibalization_ratio": {
+        "@10": 0.651685393258427,
+        "@50": 0.33093525179856115,
+        "@100": 0.39705882352941174,
+        "@500": 0.1440677966101695
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5111526531563271,
+      "dev_hit_counts": {
+        "hit@10": 1872,
+        "hit@50": 2136,
+        "hit@100": 2206,
+        "hit@500": 2397
+      },
+      "dev_net_gain": {
+        "@10": 38,
+        "@50": 102,
+        "@100": 86,
+        "@500": 99
+      },
+      "dev_cannibalization_ratio": {
+        "@10": 0.5476190476190477,
+        "@50": 0.2765957446808511,
+        "@100": 0.3228346456692913,
+        "@500": 0.14655172413793102
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5049307194469068,
+      "dev_hit_counts": {
+        "hit@10": 1864,
+        "hit@50": 2127,
+        "hit@100": 2207,
+        "hit@500": 2395
+      },
+      "dev_net_gain": {
+        "@10": 30,
+        "@50": 93,
+        "@100": 87,
+        "@500": 97
+      },
+      "dev_cannibalization_ratio": {
+        "@10": 0.589041095890411,
+        "@50": 0.3007518796992481,
+        "@100": 0.33076923076923076,
+        "@500": 0.17094017094017094
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.5022942470230037,
+      "dev_hit_counts": {
+        "hit@10": 1867,
+        "hit@50": 2121,
+        "hit@100": 2205,
+        "hit@500": 2396
+      },
+      "dev_net_gain": {
+        "@10": 33,
+        "@50": 87,
+        "@100": 85,
+        "@500": 98
+      },
+      "dev_cannibalization_ratio": {
+        "@10": 0.6373626373626373,
+        "@50": 0.3458646616541353,
+        "@100": 0.32,
+        "@500": 0.14782608695652175
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.4987490255537751,
+      "dev_hit_counts": {
+        "hit@10": 1867,
+        "hit@50": 2120,
+        "hit@100": 2202,
+        "hit@500": 2397
+      },
+      "dev_net_gain": {
+        "@10": 33,
+        "@50": 86,
+        "@100": 82,
+        "@500": 99
+      },
+      "dev_cannibalization_ratio": {
+        "@10": 0.6206896551724138,
+        "@50": 0.3900709219858156,
+        "@100": 0.4057971014492754,
+        "@500": 0.15384615384615385
+      }
+    }
+  ],
+  "protocol_note": "Slate-aware baseline over the fixed existing+semantic candidate pool. Labels are validation-holdout/test purchases only for their split; semantic_all_oracle is not used."
+}

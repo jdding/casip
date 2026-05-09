@@ -1,0 +1,608 @@
+{
+  "args": {
+    "artifact": "results/20260505_rees46_protocol_parallel_all_protocol/rees46_protocol_artifact.pkl",
+    "output_dir": "results/20260505_rees46_protocol_parallel_all_no_training",
+    "ks": "10,50,100,500",
+    "active_catalog_window": "test",
+    "max_users": 0
+  },
+  "artifact_args": {
+    "input": "<external-data-root>",
+    "output_dir": "results/20260505_rees46_protocol_parallel_all_protocol",
+    "chunksize": 1000000,
+    "windows": "pre:2019-10-01:2019-12-01,gap:2019-12-01:2020-02-01,val:2020-02-01:2020-03-15,test:2020-03-15:2020-05-01",
+    "category_prefixes": "",
+    "min_pre_events": 1,
+    "min_val_implicit": 1,
+    "min_test_purchases": 1,
+    "top_pop_items": 5000,
+    "max_rows": 0,
+    "max_strict_users": 0,
+    "workers": 6
+  },
+  "n_users": 16954,
+  "active_catalog_window": "test",
+  "active_catalog_size": 294234,
+  "systems": {
+    "brand_overlap_seen_allowed": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2093,
+        "hit@50": 3494,
+        "hit@100": 4133,
+        "hit@500": 5264
+      },
+      "hit_rates": {
+        "hit@10": 0.12345169281585466,
+        "hit@50": 0.2060870591010971,
+        "hit@100": 0.24377727969800636,
+        "hit@500": 0.3104872006606111
+      },
+      "mean_first_hit_rank": 429.9330231012132,
+      "mean_candidate_count": 3712.222956234517
+    },
+    "brand_replacement_unseen": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 1393,
+        "hit@50": 2397,
+        "hit@100": 2894,
+        "hit@500": 3747
+      },
+      "hit_rates": {
+        "hit@10": 0.08216350123864574,
+        "hit@50": 0.14138256458652826,
+        "hit@100": 0.1706971806063466,
+        "hit@500": 0.2210097911997169
+      },
+      "mean_first_hit_rank": 449.4960739030023,
+      "mean_candidate_count": 3698.93635720184
+    },
+    "category_code_family_replacement_unseen": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 1360,
+        "hit@50": 2572,
+        "hit@100": 3239,
+        "hit@500": 4894
+      },
+      "hit_rates": {
+        "hit@10": 0.08021705792143446,
+        "hit@50": 0.15170461248083048,
+        "hit@100": 0.19104636074082812,
+        "hit@500": 0.28866344225551493
+      },
+      "mean_first_hit_rank": 11229.563296731036,
+      "mean_candidate_count": 73448.578447564
+    },
+    "category_or_brand_replacement_unseen": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 1484,
+        "hit@50": 2710,
+        "hit@100": 3360,
+        "hit@500": 4782
+      },
+      "hit_rates": {
+        "hit@10": 0.0875309661436829,
+        "hit@50": 0.1598442845346231,
+        "hit@100": 0.1981833195706028,
+        "hit@500": 0.2820573316031615
+      },
+      "mean_first_hit_rank": 1255.9706502351223,
+      "mean_candidate_count": 8857.96779521057
+    },
+    "category_overlap_seen_allowed": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 1549,
+        "hit@50": 2786,
+        "hit@100": 3338,
+        "hit@500": 4380
+      },
+      "hit_rates": {
+        "hit@10": 0.09136486964728088,
+        "hit@50": 0.16432700247729148,
+        "hit@100": 0.19688569069246195,
+        "hit@500": 0.25834611301167865
+      },
+      "mean_first_hit_rank": 856.1429372197309,
+      "mean_candidate_count": 5880.4653179190755
+    },
+    "category_replacement_unseen": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 1087,
+        "hit@50": 2045,
+        "hit@100": 2491,
+        "hit@500": 3373
+      },
+      "hit_rates": {
+        "hit@10": 0.06411466320632299,
+        "hit@50": 0.12062050253627463,
+        "hit@100": 0.14692697888403916,
+        "hit@500": 0.1989501002713224
+      },
+      "mean_first_hit_rank": 942.1075753977677,
+      "mean_candidate_count": 5867.542054972278
+    },
+    "history_product_replay": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 632,
+        "hit@50": 684,
+        "hit@100": 685,
+        "hit@500": 685
+      },
+      "hit_rates": {
+        "hit@10": 0.037277338681137195,
+        "hit@50": 0.04034446148401557,
+        "hit@100": 0.040403444614840155,
+        "hit@500": 0.040403444614840155
+      },
+      "mean_first_hit_rank": 2.9124087591240877,
+      "mean_candidate_count": 9.027722071487554
+    },
+    "seen_product_replay": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2062,
+        "hit@50": 2473,
+        "hit@100": 2500,
+        "hit@500": 2506
+      },
+      "hit_rates": {
+        "hit@10": 0.12162321576029256,
+        "hit@50": 0.14586528252919664,
+        "hit@100": 0.14745782706146043,
+        "hit@500": 0.14781172584640792
+      },
+      "mean_first_hit_rank": 6.237829209896249,
+      "mean_candidate_count": 17.732098619794737
+    },
+    "test_purchase_popularity_oracle_upper": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2607,
+        "hit@50": 4876,
+        "hit@100": 6045,
+        "hit@500": 9512
+      },
+      "hit_rates": {
+        "hit@10": 0.15376902205969092,
+        "hit@50": 0.2876017459006724,
+        "hit@100": 0.3565530258346113,
+        "hit@500": 0.5610475404034446
+      },
+      "mean_first_hit_rank": 26974.610003538986,
+      "mean_candidate_count": 294234.0
+    },
+    "val_feedback_replay": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 1868,
+        "hit@50": 2097,
+        "hit@100": 2108,
+        "hit@500": 2112
+      },
+      "hit_rates": {
+        "hit@10": 0.11018048838032322,
+        "hit@50": 0.123687625339153,
+        "hit@100": 0.12433643977822342,
+        "hit@500": 0.12457237230152177
+      },
+      "mean_first_hit_rank": 4.352746212121212,
+      "mean_candidate_count": 9.042408871062875
+    },
+    "val_popularity": {
+      "n_users": 16954,
+      "hit_counts": {
+        "hit@10": 2394,
+        "hit@50": 4320,
+        "hit@100": 5366,
+        "hit@500": 7936
+      },
+      "hit_rates": {
+        "hit@10": 0.1412056151940545,
+        "hit@50": 0.2548071251622036,
+        "hit@100": 0.3165034800047187,
+        "hit@500": 0.46809012622389995
+      },
+      "mean_first_hit_rank": 43887.937359915064,
+      "mean_candidate_count": 294234.0
+    }
+  },
+  "overlap_oracle": {
+    "brand_overlap_seen_allowed__vs__brand_replacement_unseen": {
+      "both_hit10": 1315,
+      "union_hit10": 2171,
+      "left_only_hit10": 778,
+      "right_only_hit10": 78,
+      "jaccard_hit10": 0.6057116536158452
+    },
+    "brand_overlap_seen_allowed__vs__category_code_family_replacement_unseen": {
+      "both_hit10": 797,
+      "union_hit10": 2656,
+      "left_only_hit10": 1296,
+      "right_only_hit10": 563,
+      "jaccard_hit10": 0.3000753012048193
+    },
+    "brand_overlap_seen_allowed__vs__category_or_brand_replacement_unseen": {
+      "both_hit10": 1152,
+      "union_hit10": 2425,
+      "left_only_hit10": 941,
+      "right_only_hit10": 332,
+      "jaccard_hit10": 0.47505154639175257
+    },
+    "brand_overlap_seen_allowed__vs__category_overlap_seen_allowed": {
+      "both_hit10": 1058,
+      "union_hit10": 2584,
+      "left_only_hit10": 1035,
+      "right_only_hit10": 491,
+      "jaccard_hit10": 0.40944272445820434
+    },
+    "brand_overlap_seen_allowed__vs__category_replacement_unseen": {
+      "both_hit10": 645,
+      "union_hit10": 2535,
+      "left_only_hit10": 1448,
+      "right_only_hit10": 442,
+      "jaccard_hit10": 0.25443786982248523
+    },
+    "brand_overlap_seen_allowed__vs__history_product_replay": {
+      "both_hit10": 337,
+      "union_hit10": 2388,
+      "left_only_hit10": 1756,
+      "right_only_hit10": 295,
+      "jaccard_hit10": 0.14112227805695143
+    },
+    "brand_overlap_seen_allowed__vs__seen_product_replay": {
+      "both_hit10": 936,
+      "union_hit10": 3219,
+      "left_only_hit10": 1157,
+      "right_only_hit10": 1126,
+      "jaccard_hit10": 0.2907735321528425
+    },
+    "brand_overlap_seen_allowed__vs__test_purchase_popularity_oracle_upper": {
+      "both_hit10": 1496,
+      "union_hit10": 3204,
+      "left_only_hit10": 597,
+      "right_only_hit10": 1111,
+      "jaccard_hit10": 0.46691635455680397
+    },
+    "brand_overlap_seen_allowed__vs__val_feedback_replay": {
+      "both_hit10": 778,
+      "union_hit10": 3183,
+      "left_only_hit10": 1315,
+      "right_only_hit10": 1090,
+      "jaccard_hit10": 0.24442349984291548
+    },
+    "brand_overlap_seen_allowed__vs__val_popularity": {
+      "both_hit10": 1505,
+      "union_hit10": 2982,
+      "left_only_hit10": 588,
+      "right_only_hit10": 889,
+      "jaccard_hit10": 0.5046948356807511
+    },
+    "brand_replacement_unseen__vs__category_code_family_replacement_unseen": {
+      "both_hit10": 785,
+      "union_hit10": 1968,
+      "left_only_hit10": 608,
+      "right_only_hit10": 575,
+      "jaccard_hit10": 0.3988821138211382
+    },
+    "brand_replacement_unseen__vs__category_or_brand_replacement_unseen": {
+      "both_hit10": 1167,
+      "union_hit10": 1710,
+      "left_only_hit10": 226,
+      "right_only_hit10": 317,
+      "jaccard_hit10": 0.6824561403508772
+    },
+    "brand_replacement_unseen__vs__category_overlap_seen_allowed": {
+      "both_hit10": 611,
+      "union_hit10": 2331,
+      "left_only_hit10": 782,
+      "right_only_hit10": 938,
+      "jaccard_hit10": 0.2621192621192621
+    },
+    "brand_replacement_unseen__vs__category_replacement_unseen": {
+      "both_hit10": 639,
+      "union_hit10": 1841,
+      "left_only_hit10": 754,
+      "right_only_hit10": 448,
+      "jaccard_hit10": 0.34709397066811515
+    },
+    "brand_replacement_unseen__vs__history_product_replay": {
+      "both_hit10": 60,
+      "union_hit10": 1965,
+      "left_only_hit10": 1333,
+      "right_only_hit10": 572,
+      "jaccard_hit10": 0.030534351145038167
+    },
+    "brand_replacement_unseen__vs__seen_product_replay": {
+      "both_hit10": 160,
+      "union_hit10": 3295,
+      "left_only_hit10": 1233,
+      "right_only_hit10": 1902,
+      "jaccard_hit10": 0.048558421851289835
+    },
+    "brand_replacement_unseen__vs__test_purchase_popularity_oracle_upper": {
+      "both_hit10": 957,
+      "union_hit10": 3043,
+      "left_only_hit10": 436,
+      "right_only_hit10": 1650,
+      "jaccard_hit10": 0.3144922773578705
+    },
+    "brand_replacement_unseen__vs__val_feedback_replay": {
+      "both_hit10": 140,
+      "union_hit10": 3121,
+      "left_only_hit10": 1253,
+      "right_only_hit10": 1728,
+      "jaccard_hit10": 0.04485741749439282
+    },
+    "brand_replacement_unseen__vs__val_popularity": {
+      "both_hit10": 915,
+      "union_hit10": 2872,
+      "left_only_hit10": 478,
+      "right_only_hit10": 1479,
+      "jaccard_hit10": 0.3185933147632312
+    },
+    "category_code_family_replacement_unseen__vs__category_or_brand_replacement_unseen": {
+      "both_hit10": 1075,
+      "union_hit10": 1769,
+      "left_only_hit10": 285,
+      "right_only_hit10": 409,
+      "jaccard_hit10": 0.607687959299039
+    },
+    "category_code_family_replacement_unseen__vs__category_overlap_seen_allowed": {
+      "both_hit10": 906,
+      "union_hit10": 2003,
+      "left_only_hit10": 454,
+      "right_only_hit10": 643,
+      "jaccard_hit10": 0.4523215177234149
+    },
+    "category_code_family_replacement_unseen__vs__category_replacement_unseen": {
+      "both_hit10": 932,
+      "union_hit10": 1515,
+      "left_only_hit10": 428,
+      "right_only_hit10": 155,
+      "jaccard_hit10": 0.6151815181518152
+    },
+    "category_code_family_replacement_unseen__vs__history_product_replay": {
+      "both_hit10": 55,
+      "union_hit10": 1937,
+      "left_only_hit10": 1305,
+      "right_only_hit10": 577,
+      "jaccard_hit10": 0.02839442436757873
+    },
+    "category_code_family_replacement_unseen__vs__seen_product_replay": {
+      "both_hit10": 140,
+      "union_hit10": 3282,
+      "left_only_hit10": 1220,
+      "right_only_hit10": 1922,
+      "jaccard_hit10": 0.042656916514320534
+    },
+    "category_code_family_replacement_unseen__vs__test_purchase_popularity_oracle_upper": {
+      "both_hit10": 1163,
+      "union_hit10": 2804,
+      "left_only_hit10": 197,
+      "right_only_hit10": 1444,
+      "jaccard_hit10": 0.41476462196861624
+    },
+    "category_code_family_replacement_unseen__vs__val_feedback_replay": {
+      "both_hit10": 118,
+      "union_hit10": 3110,
+      "left_only_hit10": 1242,
+      "right_only_hit10": 1750,
+      "jaccard_hit10": 0.037942122186495175
+    },
+    "category_code_family_replacement_unseen__vs__val_popularity": {
+      "both_hit10": 1214,
+      "union_hit10": 2540,
+      "left_only_hit10": 146,
+      "right_only_hit10": 1180,
+      "jaccard_hit10": 0.4779527559055118
+    },
+    "category_or_brand_replacement_unseen__vs__category_overlap_seen_allowed": {
+      "both_hit10": 914,
+      "union_hit10": 2119,
+      "left_only_hit10": 570,
+      "right_only_hit10": 635,
+      "jaccard_hit10": 0.43133553563001414
+    },
+    "category_or_brand_replacement_unseen__vs__category_replacement_unseen": {
+      "both_hit10": 930,
+      "union_hit10": 1641,
+      "left_only_hit10": 554,
+      "right_only_hit10": 157,
+      "jaccard_hit10": 0.56672760511883
+    },
+    "category_or_brand_replacement_unseen__vs__history_product_replay": {
+      "both_hit10": 64,
+      "union_hit10": 2052,
+      "left_only_hit10": 1420,
+      "right_only_hit10": 568,
+      "jaccard_hit10": 0.031189083820662766
+    },
+    "category_or_brand_replacement_unseen__vs__seen_product_replay": {
+      "both_hit10": 170,
+      "union_hit10": 3376,
+      "left_only_hit10": 1314,
+      "right_only_hit10": 1892,
+      "jaccard_hit10": 0.050355450236966824
+    },
+    "category_or_brand_replacement_unseen__vs__test_purchase_popularity_oracle_upper": {
+      "both_hit10": 1175,
+      "union_hit10": 2916,
+      "left_only_hit10": 309,
+      "right_only_hit10": 1432,
+      "jaccard_hit10": 0.40294924554183814
+    },
+    "category_or_brand_replacement_unseen__vs__val_feedback_replay": {
+      "both_hit10": 142,
+      "union_hit10": 3210,
+      "left_only_hit10": 1342,
+      "right_only_hit10": 1726,
+      "jaccard_hit10": 0.04423676012461059
+    },
+    "category_or_brand_replacement_unseen__vs__val_popularity": {
+      "both_hit10": 1194,
+      "union_hit10": 2684,
+      "left_only_hit10": 290,
+      "right_only_hit10": 1200,
+      "jaccard_hit10": 0.44485842026825634
+    },
+    "category_overlap_seen_allowed__vs__category_replacement_unseen": {
+      "both_hit10": 1019,
+      "union_hit10": 1617,
+      "left_only_hit10": 530,
+      "right_only_hit10": 68,
+      "jaccard_hit10": 0.6301793444650587
+    },
+    "category_overlap_seen_allowed__vs__history_product_replay": {
+      "both_hit10": 323,
+      "union_hit10": 1858,
+      "left_only_hit10": 1226,
+      "right_only_hit10": 309,
+      "jaccard_hit10": 0.17384284176533907
+    },
+    "category_overlap_seen_allowed__vs__seen_product_replay": {
+      "both_hit10": 662,
+      "union_hit10": 2949,
+      "left_only_hit10": 887,
+      "right_only_hit10": 1400,
+      "jaccard_hit10": 0.22448287555103424
+    },
+    "category_overlap_seen_allowed__vs__test_purchase_popularity_oracle_upper": {
+      "both_hit10": 1196,
+      "union_hit10": 2960,
+      "left_only_hit10": 353,
+      "right_only_hit10": 1411,
+      "jaccard_hit10": 0.40405405405405403
+    },
+    "category_overlap_seen_allowed__vs__val_feedback_replay": {
+      "both_hit10": 513,
+      "union_hit10": 2904,
+      "left_only_hit10": 1036,
+      "right_only_hit10": 1355,
+      "jaccard_hit10": 0.17665289256198347
+    },
+    "category_overlap_seen_allowed__vs__val_popularity": {
+      "both_hit10": 1262,
+      "union_hit10": 2681,
+      "left_only_hit10": 287,
+      "right_only_hit10": 1132,
+      "jaccard_hit10": 0.4707198806415517
+    },
+    "category_replacement_unseen__vs__history_product_replay": {
+      "both_hit10": 61,
+      "union_hit10": 1658,
+      "left_only_hit10": 1026,
+      "right_only_hit10": 571,
+      "jaccard_hit10": 0.0367913148371532
+    },
+    "category_replacement_unseen__vs__seen_product_replay": {
+      "both_hit10": 141,
+      "union_hit10": 3008,
+      "left_only_hit10": 946,
+      "right_only_hit10": 1921,
+      "jaccard_hit10": 0.046875
+    },
+    "category_replacement_unseen__vs__test_purchase_popularity_oracle_upper": {
+      "both_hit10": 831,
+      "union_hit10": 2863,
+      "left_only_hit10": 256,
+      "right_only_hit10": 1776,
+      "jaccard_hit10": 0.2902549772965421
+    },
+    "category_replacement_unseen__vs__val_feedback_replay": {
+      "both_hit10": 114,
+      "union_hit10": 2841,
+      "left_only_hit10": 973,
+      "right_only_hit10": 1754,
+      "jaccard_hit10": 0.04012671594508976
+    },
+    "category_replacement_unseen__vs__val_popularity": {
+      "both_hit10": 841,
+      "union_hit10": 2640,
+      "left_only_hit10": 246,
+      "right_only_hit10": 1553,
+      "jaccard_hit10": 0.31856060606060604
+    },
+    "history_product_replay__vs__seen_product_replay": {
+      "both_hit10": 586,
+      "union_hit10": 2108,
+      "left_only_hit10": 46,
+      "right_only_hit10": 1476,
+      "jaccard_hit10": 0.27798861480075904
+    },
+    "history_product_replay__vs__test_purchase_popularity_oracle_upper": {
+      "both_hit10": 274,
+      "union_hit10": 2965,
+      "left_only_hit10": 358,
+      "right_only_hit10": 2333,
+      "jaccard_hit10": 0.0924114671163575
+    },
+    "history_product_replay__vs__val_feedback_replay": {
+      "both_hit10": 263,
+      "union_hit10": 2237,
+      "left_only_hit10": 369,
+      "right_only_hit10": 1605,
+      "jaccard_hit10": 0.11756817165847117
+    },
+    "history_product_replay__vs__val_popularity": {
+      "both_hit10": 280,
+      "union_hit10": 2746,
+      "left_only_hit10": 352,
+      "right_only_hit10": 2114,
+      "jaccard_hit10": 0.10196649672250546
+    },
+    "seen_product_replay__vs__test_purchase_popularity_oracle_upper": {
+      "both_hit10": 774,
+      "union_hit10": 3895,
+      "left_only_hit10": 1288,
+      "right_only_hit10": 1833,
+      "jaccard_hit10": 0.1987163029525032
+    },
+    "seen_product_replay__vs__val_feedback_replay": {
+      "both_hit10": 1731,
+      "union_hit10": 2199,
+      "left_only_hit10": 331,
+      "right_only_hit10": 137,
+      "jaccard_hit10": 0.7871759890859482
+    },
+    "seen_product_replay__vs__val_popularity": {
+      "both_hit10": 776,
+      "union_hit10": 3680,
+      "left_only_hit10": 1286,
+      "right_only_hit10": 1618,
+      "jaccard_hit10": 0.2108695652173913
+    },
+    "test_purchase_popularity_oracle_upper__vs__val_feedback_replay": {
+      "both_hit10": 655,
+      "union_hit10": 3820,
+      "left_only_hit10": 1952,
+      "right_only_hit10": 1213,
+      "jaccard_hit10": 0.17146596858638743
+    },
+    "test_purchase_popularity_oracle_upper__vs__val_popularity": {
+      "both_hit10": 2210,
+      "union_hit10": 2791,
+      "left_only_hit10": 397,
+      "right_only_hit10": 184,
+      "jaccard_hit10": 0.7918308849874597
+    },
+    "val_feedback_replay__vs__val_popularity": {
+      "both_hit10": 648,
+      "union_hit10": 3614,
+      "left_only_hit10": 1220,
+      "right_only_hit10": 1746,
+      "jaccard_hit10": 0.1793027116768124
+    },
+    "union_all_systems": {
+      "hit@10": 4639,
+      "hit@50": 7025,
+      "hit@100": 8092,
+      "hit@500": 11155
+    }
+  }
+}

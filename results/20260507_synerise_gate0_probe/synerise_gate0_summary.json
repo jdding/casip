@@ -1,0 +1,254 @@
+{
+  "args": {
+    "input_dir": "data/synerise_dataset",
+    "output_dir": "results/20260507_synerise_gate0_probe",
+    "batch_size": 1000000,
+    "max_rows_per_file": 0,
+    "windows": "pre:2022-06-23:2022-10-10,gap:2022-10-10:2022-10-23,val:2022-10-23:2022-11-12,test:2022-11-12:2022-12-09"
+  },
+  "inputs": {
+    "events": {
+      "product_buy": "data/synerise_dataset/product_buy.parquet",
+      "add_to_cart": "data/synerise_dataset/add_to_cart.parquet",
+      "remove_from_cart": "data/synerise_dataset/remove_from_cart.parquet",
+      "page_visit": "data/synerise_dataset/page_visit.parquet",
+      "search_query": "data/synerise_dataset/search_query.parquet"
+    },
+    "product_properties": "data/synerise_dataset/product_properties.parquet"
+  },
+  "provenance": {
+    "cwd": "<repo-root>",
+    "argv": [
+      "scripts/train_agknet/synerise_gate0_probe.py",
+      "--input-dir",
+      "data/synerise_dataset",
+      "--output-dir",
+      "results/20260507_synerise_gate0_probe",
+      "--batch-size",
+      "1000000",
+      "--windows",
+      "pre:2022-06-23:2022-10-10,gap:2022-10-10:2022-10-23,val:2022-10-23:2022-11-12,test:2022-11-12:2022-12-09"
+    ],
+    "hostname": "<local-host>",
+    "python": "3.9.6"
+  },
+  "windows": [
+    {
+      "name": "pre",
+      "start": "2022-06-23 00:00:00",
+      "end": "2022-10-10 00:00:00"
+    },
+    {
+      "name": "gap",
+      "start": "2022-10-10 00:00:00",
+      "end": "2022-10-23 00:00:00"
+    },
+    {
+      "name": "val",
+      "start": "2022-10-23 00:00:00",
+      "end": "2022-11-12 00:00:00"
+    },
+    {
+      "name": "test",
+      "start": "2022-11-12 00:00:00",
+      "end": "2022-12-09 00:00:00"
+    }
+  ],
+  "rows_seen": {
+    "product_buy": 2318502,
+    "add_to_cart": 7541117,
+    "remove_from_cart": 2688894,
+    "page_visit": 199451980,
+    "search_query": 13223769
+  },
+  "rows_used_in_windows": {
+    "product_buy": 2318502,
+    "add_to_cart": 7541117,
+    "remove_from_cart": 2688894,
+    "page_visit": 199451980,
+    "search_query": 13223769
+  },
+  "event_counts_in_windows": {
+    "product_buy": 2318502,
+    "add_to_cart": 7541117,
+    "remove_from_cart": 2688894,
+    "page_visit": 199451980,
+    "search_query": 13223769
+  },
+  "window_event_counts": {
+    "gap:add_to_cart": 641947,
+    "gap:page_visit": 14930687,
+    "gap:product_buy": 175712,
+    "gap:remove_from_cart": 244277,
+    "gap:search_query": 1010989,
+    "pre:add_to_cart": 4105662,
+    "pre:page_visit": 117157227,
+    "pre:product_buy": 1302958,
+    "pre:remove_from_cart": 1354836,
+    "pre:search_query": 7658139,
+    "test:add_to_cart": 1767007,
+    "test:page_visit": 40798469,
+    "test:product_buy": 515537,
+    "test:remove_from_cart": 714902,
+    "test:search_query": 2837027,
+    "val:add_to_cart": 1026501,
+    "val:page_visit": 26565597,
+    "val:product_buy": 324295,
+    "val:remove_from_cart": 374879,
+    "val:search_query": 1717614
+  },
+  "unique_users_in_windows": 22298361,
+  "gate_counts": [
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_buy",
+      "users": 17465,
+      "mean_pre_all": 55.29000858860578,
+      "mean_gap_all": 0.0,
+      "mean_val_proxy": 25.552648153449756,
+      "mean_val_add_to_cart": 1.6076724878328086,
+      "mean_val_search_query": 2.3316346979673632,
+      "mean_test_purchase": 2.5452619524763813
+    },
+    {
+      "gate": "pre_buy_gap_silent_val_proxy_test_buy",
+      "users": 8375,
+      "mean_pre_all": 90.61755223880597,
+      "mean_gap_all": 0.0,
+      "mean_val_proxy": 27.268417910447763,
+      "mean_val_add_to_cart": 1.9231044776119404,
+      "mean_val_search_query": 2.7767164179104475,
+      "mean_test_purchase": 2.78555223880597
+    },
+    {
+      "gate": "pre_any_gap_low5_val_proxy_test_buy",
+      "users": 29200,
+      "mean_pre_all": 66.50455479452054,
+      "mean_gap_all": 0.9851027397260274,
+      "mean_val_proxy": 25.47541095890411,
+      "mean_val_add_to_cart": 1.703013698630137,
+      "mean_val_search_query": 2.3220205479452054,
+      "mean_test_purchase": 2.5885616438356163
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cart_search_test_buy",
+      "users": 8347,
+      "mean_pre_all": 72.14759793937942,
+      "mean_gap_all": 0.0,
+      "mean_val_proxy": 47.749610638552774,
+      "mean_val_add_to_cart": 3.3638432969929317,
+      "mean_val_search_query": 4.87863903198754,
+      "mean_test_purchase": 2.9849047561998323
+    }
+  ],
+  "target_level_gate_counts": [
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_buy",
+      "level": "sku",
+      "users": 17465,
+      "test_purchase_targets": 26549,
+      "seen_pre_or_val_targets": 54374,
+      "test_target_oov_vs_user_history": 20706,
+      "test_target_oov_rate_vs_user_history": 0.7799163810313006
+    },
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_buy",
+      "level": "category",
+      "users": 17465,
+      "test_purchase_targets": 3065,
+      "seen_pre_or_val_targets": 3757,
+      "test_target_oov_vs_user_history": 409,
+      "test_target_oov_rate_vs_user_history": 0.133442088091354
+    },
+    {
+      "gate": "pre_any_gap_silent_val_proxy_test_buy",
+      "level": "price",
+      "users": 17465,
+      "test_purchase_targets": 100,
+      "seen_pre_or_val_targets": 100,
+      "test_target_oov_vs_user_history": 0,
+      "test_target_oov_rate_vs_user_history": 0.0
+    },
+    {
+      "gate": "pre_buy_gap_silent_val_proxy_test_buy",
+      "level": "sku",
+      "users": 8375,
+      "test_purchase_targets": 15290,
+      "seen_pre_or_val_targets": 42538,
+      "test_target_oov_vs_user_history": 12114,
+      "test_target_oov_rate_vs_user_history": 0.7922825376062786
+    },
+    {
+      "gate": "pre_buy_gap_silent_val_proxy_test_buy",
+      "level": "category",
+      "users": 8375,
+      "test_purchase_targets": 2456,
+      "seen_pre_or_val_targets": 3458,
+      "test_target_oov_vs_user_history": 326,
+      "test_target_oov_rate_vs_user_history": 0.13273615635179153
+    },
+    {
+      "gate": "pre_buy_gap_silent_val_proxy_test_buy",
+      "level": "price",
+      "users": 8375,
+      "test_purchase_targets": 100,
+      "seen_pre_or_val_targets": 100,
+      "test_target_oov_vs_user_history": 0,
+      "test_target_oov_rate_vs_user_history": 0.0
+    },
+    {
+      "gate": "pre_any_gap_low5_val_proxy_test_buy",
+      "level": "sku",
+      "users": 29200,
+      "test_purchase_targets": 41406,
+      "seen_pre_or_val_targets": 94647,
+      "test_target_oov_vs_user_history": 30567,
+      "test_target_oov_rate_vs_user_history": 0.7382263440081148
+    },
+    {
+      "gate": "pre_any_gap_low5_val_proxy_test_buy",
+      "level": "category",
+      "users": 29200,
+      "test_purchase_targets": 3569,
+      "seen_pre_or_val_targets": 4331,
+      "test_target_oov_vs_user_history": 357,
+      "test_target_oov_rate_vs_user_history": 0.10002801905295601
+    },
+    {
+      "gate": "pre_any_gap_low5_val_proxy_test_buy",
+      "level": "price",
+      "users": 29200,
+      "test_purchase_targets": 100,
+      "seen_pre_or_val_targets": 100,
+      "test_target_oov_vs_user_history": 0,
+      "test_target_oov_rate_vs_user_history": 0.0
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cart_search_test_buy",
+      "level": "sku",
+      "users": 8347,
+      "test_purchase_targets": 16206,
+      "seen_pre_or_val_targets": 42224,
+      "test_target_oov_vs_user_history": 12152,
+      "test_target_oov_rate_vs_user_history": 0.749845736147106
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cart_search_test_buy",
+      "level": "category",
+      "users": 8347,
+      "test_purchase_targets": 2525,
+      "seen_pre_or_val_targets": 3424,
+      "test_target_oov_vs_user_history": 318,
+      "test_target_oov_rate_vs_user_history": 0.12594059405940594
+    },
+    {
+      "gate": "pre_any_gap_silent_val_cart_search_test_buy",
+      "level": "price",
+      "users": 8347,
+      "test_purchase_targets": 100,
+      "seen_pre_or_val_targets": 100,
+      "test_target_oov_vs_user_history": 0,
+      "test_target_oov_rate_vs_user_history": 0.0
+    }
+  ],
+  "runtime_seconds": 274.71829319000244
+}

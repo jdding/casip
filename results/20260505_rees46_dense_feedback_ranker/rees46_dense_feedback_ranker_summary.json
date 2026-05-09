@@ -1,0 +1,176 @@
+{
+  "args": {
+    "artifact": "<external-workspace>",
+    "output_dir": "<external-workspace>",
+    "ks": [
+      10,
+      50,
+      100,
+      500
+    ],
+    "source_topk": 500,
+    "candidate_topk": 2500,
+    "negatives_per_user": 120,
+    "val_context_frac": 0.5,
+    "dev_frac": 0.2,
+    "epochs": 6,
+    "lr": 0.05,
+    "l2": 0.0001,
+    "batch_size": 8192,
+    "max_users": 0,
+    "workers": 16,
+    "seed": 42
+  },
+  "n_users_total": 16954,
+  "n_train_users": 11820,
+  "n_dev_users": 2956,
+  "n_test_users": 16954,
+  "n_train_examples": 1241860,
+  "n_train_positive_examples": 29980,
+  "feature_names": [
+    "global_popularity_recip_rank",
+    "global_popularity_present",
+    "context_feedback_replay_recip_rank",
+    "context_feedback_replay_present",
+    "seen_product_replay_recip_rank",
+    "seen_product_replay_present",
+    "brand_overlap_seen_allowed_recip_rank",
+    "brand_overlap_seen_allowed_present",
+    "brand_replacement_unseen_recip_rank",
+    "brand_replacement_unseen_present",
+    "category_overlap_seen_allowed_recip_rank",
+    "category_overlap_seen_allowed_present",
+    "category_or_brand_replacement_unseen_recip_rank",
+    "category_or_brand_replacement_unseen_present",
+    "category_code_family_replacement_unseen_recip_rank",
+    "category_code_family_replacement_unseen_present",
+    "source_count",
+    "seen_product",
+    "history_product",
+    "context_product"
+  ],
+  "selected_epoch": 3,
+  "dev_summary": {
+    "n_users": 2956,
+    "hit_counts": {
+      "hit@10": 1831,
+      "hit@50": 2121,
+      "hit@100": 2190,
+      "hit@500": 2372
+    },
+    "hit_rates": {
+      "hit@10": 0.6194181326116374,
+      "hit@50": 0.7175236806495264,
+      "hit@100": 0.7408660351826793,
+      "hit@500": 0.8024357239512855
+    },
+    "mean_first_hit_rank": 82.36611374407583
+  },
+  "test_summary": {
+    "n_users": 16954,
+    "hit_counts": {
+      "hit@10": 2766,
+      "hit@50": 4785,
+      "hit@100": 5629,
+      "hit@500": 8356
+    },
+    "hit_rates": {
+      "hit@10": 0.16314733986079982,
+      "hit@50": 0.28223428099563524,
+      "hit@100": 0.3320160434115843,
+      "hit@500": 0.49286304117022534
+    },
+    "mean_first_hit_rank": 223.42255926074728
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "dev_hit_counts": {
+        "hit@10": 1830,
+        "hit@50": 2123,
+        "hit@100": 2191,
+        "hit@500": 2368
+      },
+      "dev_mean_first_hit_rank": 82.86848341232228
+    },
+    {
+      "epoch": 2,
+      "dev_hit_counts": {
+        "hit@10": 1828,
+        "hit@50": 2123,
+        "hit@100": 2191,
+        "hit@500": 2369
+      },
+      "dev_mean_first_hit_rank": 82.76382306477093
+    },
+    {
+      "epoch": 3,
+      "dev_hit_counts": {
+        "hit@10": 1831,
+        "hit@50": 2121,
+        "hit@100": 2190,
+        "hit@500": 2372
+      },
+      "dev_mean_first_hit_rank": 82.36611374407583
+    },
+    {
+      "epoch": 4,
+      "dev_hit_counts": {
+        "hit@10": 1825,
+        "hit@50": 2123,
+        "hit@100": 2190,
+        "hit@500": 2372
+      },
+      "dev_mean_first_hit_rank": 82.41350710900474
+    },
+    {
+      "epoch": 5,
+      "dev_hit_counts": {
+        "hit@10": 1825,
+        "hit@50": 2120,
+        "hit@100": 2191,
+        "hit@500": 2370
+      },
+      "dev_mean_first_hit_rank": 82.62045813586099
+    },
+    {
+      "epoch": 6,
+      "dev_hit_counts": {
+        "hit@10": 1825,
+        "hit@50": 2120,
+        "hit@100": 2188,
+        "hit@500": 2377
+      },
+      "dev_mean_first_hit_rank": 82.30055292259084
+    }
+  ],
+  "learned_weights": {
+    "global_popularity_recip_rank": 0.20310379564762115,
+    "global_popularity_present": 0.34792986512184143,
+    "context_feedback_replay_recip_rank": 0.06338205933570862,
+    "context_feedback_replay_present": 0.19099543988704681,
+    "seen_product_replay_recip_rank": -0.027987875044345856,
+    "seen_product_replay_present": 0.1709902435541153,
+    "brand_overlap_seen_allowed_recip_rank": -0.02008085325360298,
+    "brand_overlap_seen_allowed_present": 0.08950960636138916,
+    "brand_replacement_unseen_recip_rank": 0.11525960266590118,
+    "brand_replacement_unseen_present": 0.13163010776042938,
+    "category_overlap_seen_allowed_recip_rank": 0.0026941606774926186,
+    "category_overlap_seen_allowed_present": 0.03582099825143814,
+    "category_or_brand_replacement_unseen_recip_rank": 0.025455614551901817,
+    "category_or_brand_replacement_unseen_present": 0.08612910658121109,
+    "category_code_family_replacement_unseen_recip_rank": 0.032730232924222946,
+    "category_code_family_replacement_unseen_present": -0.07932112365961075,
+    "source_count": 0.247140571475029,
+    "seen_product": 0.1709902435541153,
+    "history_product": 0.0256836898624897,
+    "context_product": 0.1909954696893692,
+    "intercept": -0.828761875629425
+  },
+  "reference_rule_test_hit_counts": {
+    "hit@10": 2910,
+    "hit@50": 5211,
+    "hit@100": 6199,
+    "hit@500": 8517
+  }
+}

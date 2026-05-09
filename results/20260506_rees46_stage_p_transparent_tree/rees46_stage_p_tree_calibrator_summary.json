@@ -1,0 +1,377 @@
+{
+  "args": {
+    "artifact": "results/20260505_rees46_protocol_parallel_all_protocol/rees46_protocol_artifact.pkl",
+    "per_user": "results/20260506_rees46_semantic_confidence_full/rees46_semantic_confidence_audit_per_user.csv",
+    "output_dir": "results/20260506_rees46_stage_p_transparent_tree",
+    "model": "tree",
+    "selection_k": 100,
+    "ks": "10,50,100,500",
+    "penalty_weight": 3.0,
+    "neutral_weight": 0.05,
+    "max_depth": 3,
+    "max_validation_ratio": 0.5,
+    "min_validation_net": 20,
+    "max_open_rate": 0.7,
+    "val_context_frac": 0.5,
+    "val_target_types": "cart"
+  },
+  "model_kind": "tree",
+  "train_counts": {
+    "n_train_rows": 5689,
+    "positive_gross": 62,
+    "negative_cannibal_or_neutral": 5627
+  },
+  "selected_threshold": 0.0748839,
+  "selected": {
+    "validation": {
+      "config": "score_ge_0.0748839",
+      "conditions": [
+        {
+          "feature": "_score",
+          "direction": "ge",
+          "threshold": 0.07488392990864279
+        }
+      ],
+      "n_users": 5689,
+      "gate_open_users": 3331,
+      "gate_open_rate": 0.585515907892424,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4186,
+        "hit@100": 4331,
+        "hit@500": 4614
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 62,
+        "@100": 61,
+        "@500": 26
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 4,
+        "@100": 1,
+        "@500": 0
+      },
+      "net_gain": {
+        "@10": 0,
+        "@50": 58,
+        "@100": 60,
+        "@500": 26
+      },
+      "cannibalization_ratio": {
+        "@10": null,
+        "@50": 0.06451612903225806,
+        "@100": 0.01639344262295082,
+        "@500": 0.0
+      }
+    },
+    "test": {
+      "config": "score_ge_0.0748839",
+      "conditions": [
+        {
+          "feature": "_score",
+          "direction": "ge",
+          "threshold": 0.0748839
+        }
+      ],
+      "n_users": 16954,
+      "gate_open_users": 11004,
+      "gate_open_rate": 0.6490503715937241,
+      "hit_counts": {
+        "hit@10": 3044,
+        "hit@50": 5331,
+        "hit@100": 6422,
+        "hit@500": 8842
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 88,
+        "@100": 83,
+        "@500": 31
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 76,
+        "@100": 53,
+        "@500": 5
+      },
+      "net_gain": {
+        "@10": 0,
+        "@50": 12,
+        "@100": 30,
+        "@500": 26
+      },
+      "cannibalization_ratio": {
+        "@10": null,
+        "@50": 0.8636363636363636,
+        "@100": 0.6385542168674698,
+        "@500": 0.16129032258064516
+      }
+    }
+  },
+  "top_validation_thresholds": [
+    {
+      "config": "score_ge_0.0748839",
+      "conditions": [
+        {
+          "feature": "_score",
+          "direction": "ge",
+          "threshold": 0.07488392990864279
+        }
+      ],
+      "n_users": 5689,
+      "gate_open_users": 3331,
+      "gate_open_rate": 0.585515907892424,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4186,
+        "hit@100": 4331,
+        "hit@500": 4614
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 62,
+        "@100": 61,
+        "@500": 26
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 4,
+        "@100": 1,
+        "@500": 0
+      },
+      "net_gain": {
+        "@10": 0,
+        "@50": 58,
+        "@100": 60,
+        "@500": 26
+      },
+      "cannibalization_ratio": {
+        "@10": null,
+        "@50": 0.06451612903225806,
+        "@100": 0.01639344262295082,
+        "@500": 0.0
+      }
+    },
+    {
+      "config": "score_ge_0",
+      "conditions": [
+        {
+          "feature": "_score",
+          "direction": "ge",
+          "threshold": 0.0
+        }
+      ],
+      "n_users": 5689,
+      "gate_open_users": 5689,
+      "gate_open_rate": 1.0,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4185,
+        "hit@100": 4331,
+        "hit@500": 4614
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 64,
+        "@100": 62,
+        "@500": 26
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 7,
+        "@100": 2,
+        "@500": 0
+      },
+      "net_gain": {
+        "@10": 0,
+        "@50": 57,
+        "@100": 60,
+        "@500": 26
+      },
+      "cannibalization_ratio": {
+        "@10": null,
+        "@50": 0.109375,
+        "@100": 0.03225806451612903,
+        "@500": 0.0
+      }
+    },
+    {
+      "config": "score_ge_0.0072648",
+      "conditions": [
+        {
+          "feature": "_score",
+          "direction": "ge",
+          "threshold": 0.007264802034144448
+        }
+      ],
+      "n_users": 5689,
+      "gate_open_users": 4224,
+      "gate_open_rate": 0.7424854983301108,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4187,
+        "hit@100": 4331,
+        "hit@500": 4614
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 64,
+        "@100": 62,
+        "@500": 26
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 5,
+        "@100": 2,
+        "@500": 0
+      },
+      "net_gain": {
+        "@10": 0,
+        "@50": 59,
+        "@100": 60,
+        "@500": 26
+      },
+      "cannibalization_ratio": {
+        "@10": null,
+        "@50": 0.078125,
+        "@100": 0.03225806451612903,
+        "@500": 0.0
+      }
+    },
+    {
+      "config": "score_ge_-1e-09",
+      "conditions": [
+        {
+          "feature": "_score",
+          "direction": "ge",
+          "threshold": -1e-09
+        }
+      ],
+      "n_users": 5689,
+      "gate_open_users": 5689,
+      "gate_open_rate": 1.0,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4185,
+        "hit@100": 4331,
+        "hit@500": 4614
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 64,
+        "@100": 62,
+        "@500": 26
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 7,
+        "@100": 2,
+        "@500": 0
+      },
+      "net_gain": {
+        "@10": 0,
+        "@50": 57,
+        "@100": 60,
+        "@500": 26
+      },
+      "cannibalization_ratio": {
+        "@10": null,
+        "@50": 0.109375,
+        "@100": 0.03225806451612903,
+        "@500": 0.0
+      }
+    },
+    {
+      "config": "score_ge_0.160481",
+      "conditions": [
+        {
+          "feature": "_score",
+          "direction": "ge",
+          "threshold": 0.16048144433299583
+        }
+      ],
+      "n_users": 5689,
+      "gate_open_users": 1168,
+      "gate_open_rate": 0.20530849006855334,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4163,
+        "hit@100": 4305,
+        "hit@500": 4601
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 35,
+        "@100": 34,
+        "@500": 13
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 0,
+        "@500": 0
+      },
+      "net_gain": {
+        "@10": 0,
+        "@50": 35,
+        "@100": 34,
+        "@500": 13
+      },
+      "cannibalization_ratio": {
+        "@10": null,
+        "@50": 0.0,
+        "@100": 0.0,
+        "@500": 0.0
+      }
+    },
+    {
+      "config": "score_ge_0.425532",
+      "conditions": [
+        {
+          "feature": "_score",
+          "direction": "ge",
+          "threshold": 0.42553191589361694
+        }
+      ],
+      "n_users": 5689,
+      "gate_open_users": 0,
+      "gate_open_rate": 0.0,
+      "hit_counts": {
+        "hit@10": 3700,
+        "hit@50": 4128,
+        "hit@100": 4271,
+        "hit@500": 4588
+      },
+      "gross_recovery": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 0,
+        "@500": 0
+      },
+      "cannibalized_hit": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 0,
+        "@500": 0
+      },
+      "net_gain": {
+        "@10": 0,
+        "@50": 0,
+        "@100": 0,
+        "@500": 0
+      },
+      "cannibalization_ratio": {
+        "@10": null,
+        "@50": null,
+        "@100": null,
+        "@500": null
+      }
+    }
+  ],
+  "coefficients": [],
+  "tree_text": "|--- top_bucket_specificity <= 0.19\n|   |--- confidence_inv_history <= 0.21\n|   |   |--- class: 0\n|   |--- confidence_inv_history >  0.21\n|   |   |--- confidence_inv_history <= 0.24\n|   |   |   |--- class: 0\n|   |   |--- confidence_inv_history >  0.24\n|   |   |   |--- class: 0\n|--- top_bucket_specificity >  0.19\n|   |--- inv_n_context <= 0.05\n|   |   |--- top_semid_share <= 0.18\n|   |   |   |--- class: 0\n|   |   |--- top_semid_share >  0.18\n|   |   |   |--- class: 0\n|   |--- inv_n_context >  0.05\n|   |   |--- confidence_context <= 1.48\n|   |   |   |--- class: 0\n|   |   |--- confidence_context >  1.48\n|   |   |   |--- class: 0\n",
+  "gate_pass": false,
+  "interpretation": "Selected threshold 0.0748839. Test net@100=30, cannibal/gross=0.6385542168674698, gate_pass=False. This is the transparent P-B calibrator; compare it against P-A before escalating to a richer model."
+}

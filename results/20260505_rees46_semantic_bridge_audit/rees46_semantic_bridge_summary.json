@@ -1,0 +1,370 @@
+{
+  "args": {
+    "artifact": "results/20260505_rees46_protocol_parallel_all_protocol/rees46_protocol_artifact.pkl",
+    "output_dir": "results/20260505_rees46_semantic_bridge_audit",
+    "existing_per_user": "results/20260505_rees46_purchase_event_gate_local/rees46_validation_safe_gate_test_per_user.csv",
+    "existing_cols": "",
+    "schemes": "category,brand,code_family,category_brand,code_brand",
+    "source_scopes": "history,context,history_context",
+    "ks": "10,50,100,500",
+    "active_catalog_window": "test",
+    "bucket_topk": 2000,
+    "source_topk": 500,
+    "max_users": 0
+  },
+  "n_users": 16954,
+  "schemes": [
+    "category",
+    "brand",
+    "code_family",
+    "category_brand",
+    "code_brand"
+  ],
+  "source_scopes": [
+    "history",
+    "context",
+    "history_context"
+  ],
+  "intra_id_ranking": "val_purchase_popularity -> val_implicit_popularity -> val_all_popularity -> pre_all_popularity within semantic bucket",
+  "existing_columns_used": [
+    "global_popularity_rank",
+    "global_purchase_popularity_rank",
+    "context_feedback_replay_rank",
+    "context_event_weighted_replay_rank",
+    "context_cart_replay_rank",
+    "context_view_replay_rank",
+    "seen_product_replay_rank",
+    "global_purchase_popularity_0.025__context_event_weighted_replay_0.975_rank"
+  ],
+  "support_groups": {
+    "existing_union": {
+      "hit_counts": {
+        "hit@10": 3896,
+        "hit@50": 5810,
+        "hit@100": 6708,
+        "hit@500": 9080
+      },
+      "hit_rates": {
+        "hit@10": 0.22979827769257993,
+        "hit@50": 0.342691990090834,
+        "hit@100": 0.3956588415713106,
+        "hit@500": 0.5355668278872242
+      },
+      "delta_vs_existing@10": 0,
+      "delta_vs_existing@50": 0,
+      "delta_vs_existing@100": 0,
+      "delta_vs_existing@500": 0
+    },
+    "semantic_all_oracle": {
+      "hit_counts": {
+        "hit@10": 2584,
+        "hit@50": 4285,
+        "hit@100": 5102,
+        "hit@500": 6624
+      },
+      "hit_rates": {
+        "hit@10": 0.1524124100507255,
+        "hit@50": 0.25274271558334316,
+        "hit@100": 0.30093193346702846,
+        "hit@500": 0.39070425858204555
+      },
+      "delta_vs_existing@10": -1312,
+      "delta_vs_existing@50": -1525,
+      "delta_vs_existing@100": -1606,
+      "delta_vs_existing@500": -2456
+    },
+    "existing_plus_semantic_all": {
+      "hit_counts": {
+        "hit@10": 5043,
+        "hit@50": 7342,
+        "hit@100": 8351,
+        "hit@500": 10672
+      },
+      "hit_rates": {
+        "hit@10": 0.29745192874837795,
+        "hit@50": 0.43305414651409696,
+        "hit@100": 0.4925681255161024,
+        "hit@500": 0.6294679721599622
+      },
+      "delta_vs_existing@10": 1147,
+      "delta_vs_existing@50": 1532,
+      "delta_vs_existing@100": 1643,
+      "delta_vs_existing@500": 1592
+    }
+  },
+  "thresholds": {
+    "existing_miss_to_hit@100": 169.54,
+    "existing_miss_to_hit@500": 339.08
+  },
+  "decision": "PASS support gate on `semid_category_context`: existing-miss gains @100=484, @500=490.",
+  "interpretation": "This is a no-training support audit only. A pass means the Semantic-ID bridge changes candidate reachability enough to justify a calibrated bridge model. A fail means the tested semantic IDs mostly reshuffle support already covered by popularity/replay/purchase-event sources.",
+  "source_table": [
+    {
+      "source": "semid_category_context",
+      "hit@10": 860,
+      "existing_miss_to_hit@10": 290,
+      "existing_hit_to_miss@10": 3326,
+      "hit@50": 1602,
+      "existing_miss_to_hit@50": 430,
+      "existing_hit_to_miss@50": 4638,
+      "hit@100": 1973,
+      "existing_miss_to_hit@100": 484,
+      "existing_hit_to_miss@100": 5219,
+      "hit@500": 2677,
+      "existing_miss_to_hit@500": 490,
+      "existing_hit_to_miss@500": 6893,
+      "mean_candidate_count": 1308.638905273092
+    },
+    {
+      "source": "semid_brand_history_context",
+      "hit@10": 997,
+      "existing_miss_to_hit@10": 439,
+      "existing_hit_to_miss@10": 3338,
+      "hit@50": 1546,
+      "existing_miss_to_hit@50": 441,
+      "existing_hit_to_miss@50": 4705,
+      "hit@100": 1817,
+      "existing_miss_to_hit@100": 474,
+      "existing_hit_to_miss@100": 5365,
+      "hit@500": 2464,
+      "existing_miss_to_hit@500": 396,
+      "existing_hit_to_miss@500": 7012,
+      "mean_candidate_count": 1913.8484723369118
+    },
+    {
+      "source": "semid_brand_context",
+      "hit@10": 909,
+      "existing_miss_to_hit@10": 430,
+      "existing_hit_to_miss@10": 3417,
+      "hit@50": 1408,
+      "existing_miss_to_hit@50": 418,
+      "existing_hit_to_miss@50": 4820,
+      "hit@100": 1635,
+      "existing_miss_to_hit@100": 448,
+      "existing_hit_to_miss@100": 5521,
+      "hit@500": 2081,
+      "existing_miss_to_hit@500": 359,
+      "existing_hit_to_miss@500": 7358,
+      "mean_candidate_count": 1008.167099209626
+    },
+    {
+      "source": "semid_category_history_context",
+      "hit@10": 872,
+      "existing_miss_to_hit@10": 266,
+      "existing_hit_to_miss@10": 3290,
+      "hit@50": 1552,
+      "existing_miss_to_hit@50": 383,
+      "existing_hit_to_miss@50": 4641,
+      "hit@100": 1892,
+      "existing_miss_to_hit@100": 438,
+      "existing_hit_to_miss@100": 5254,
+      "hit@500": 2709,
+      "existing_miss_to_hit@500": 479,
+      "existing_hit_to_miss@500": 6850,
+      "mean_candidate_count": 2304.8039990562697
+    },
+    {
+      "source": "semid_category_brand_history_context",
+      "hit@10": 670,
+      "existing_miss_to_hit@10": 346,
+      "existing_hit_to_miss@10": 3572,
+      "hit@50": 1138,
+      "existing_miss_to_hit@50": 402,
+      "existing_hit_to_miss@50": 5074,
+      "hit@100": 1354,
+      "existing_miss_to_hit@100": 405,
+      "existing_hit_to_miss@100": 5759,
+      "hit@500": 2200,
+      "existing_miss_to_hit@500": 400,
+      "existing_hit_to_miss@500": 7280,
+      "mean_candidate_count": 582.5647634776454
+    },
+    {
+      "source": "semid_category_brand_context",
+      "hit@10": 677,
+      "existing_miss_to_hit@10": 374,
+      "existing_hit_to_miss@10": 3593,
+      "hit@50": 1101,
+      "existing_miss_to_hit@50": 408,
+      "existing_hit_to_miss@50": 5117,
+      "hit@100": 1255,
+      "existing_miss_to_hit@100": 392,
+      "existing_hit_to_miss@100": 5845,
+      "hit@500": 1707,
+      "existing_miss_to_hit@500": 320,
+      "existing_hit_to_miss@500": 7693,
+      "mean_candidate_count": 283.6241005072549
+    },
+    {
+      "source": "semid_code_brand_history_context",
+      "hit@10": 834,
+      "existing_miss_to_hit@10": 361,
+      "existing_hit_to_miss@10": 3423,
+      "hit@50": 1340,
+      "existing_miss_to_hit@50": 395,
+      "existing_hit_to_miss@50": 4865,
+      "hit@100": 1546,
+      "existing_miss_to_hit@100": 390,
+      "existing_hit_to_miss@100": 5552,
+      "hit@500": 2268,
+      "existing_miss_to_hit@500": 281,
+      "existing_hit_to_miss@500": 7093,
+      "mean_candidate_count": 920.2359915064292
+    },
+    {
+      "source": "semid_code_family_history_context",
+      "hit@10": 1132,
+      "existing_miss_to_hit@10": 165,
+      "existing_hit_to_miss@10": 2929,
+      "hit@50": 2174,
+      "existing_miss_to_hit@50": 306,
+      "existing_hit_to_miss@50": 3942,
+      "hit@100": 2792,
+      "existing_miss_to_hit@100": 373,
+      "existing_hit_to_miss@100": 4289,
+      "hit@500": 4126,
+      "existing_miss_to_hit@500": 521,
+      "existing_hit_to_miss@500": 5475,
+      "mean_candidate_count": 1270.2886634422555
+    },
+    {
+      "source": "semid_code_brand_context",
+      "hit@10": 735,
+      "existing_miss_to_hit@10": 339,
+      "existing_hit_to_miss@10": 3500,
+      "hit@50": 1197,
+      "existing_miss_to_hit@50": 360,
+      "existing_hit_to_miss@50": 4973,
+      "hit@100": 1371,
+      "existing_miss_to_hit@100": 362,
+      "existing_hit_to_miss@100": 5699,
+      "hit@500": 1816,
+      "existing_miss_to_hit@500": 249,
+      "existing_hit_to_miss@500": 7513,
+      "mean_candidate_count": 502.39860799811254
+    },
+    {
+      "source": "semid_brand_history",
+      "hit@10": 786,
+      "existing_miss_to_hit@10": 345,
+      "existing_hit_to_miss@10": 3455,
+      "hit@50": 1215,
+      "existing_miss_to_hit@50": 348,
+      "existing_hit_to_miss@50": 4943,
+      "hit@100": 1391,
+      "existing_miss_to_hit@100": 352,
+      "existing_hit_to_miss@100": 5669,
+      "hit@500": 1793,
+      "existing_miss_to_hit@500": 250,
+      "existing_hit_to_miss@500": 7537,
+      "mean_candidate_count": 1137.2870708977232
+    },
+    {
+      "source": "semid_code_family_context",
+      "hit@10": 1042,
+      "existing_miss_to_hit@10": 183,
+      "existing_hit_to_miss@10": 3037,
+      "hit@50": 1982,
+      "existing_miss_to_hit@50": 286,
+      "existing_hit_to_miss@50": 4114,
+      "hit@100": 2554,
+      "existing_miss_to_hit@100": 350,
+      "existing_hit_to_miss@100": 4504,
+      "hit@500": 3717,
+      "existing_miss_to_hit@500": 479,
+      "existing_hit_to_miss@500": 5842,
+      "mean_candidate_count": 886.5048366167276
+    },
+    {
+      "source": "semid_category_history",
+      "hit@10": 707,
+      "existing_miss_to_hit@10": 208,
+      "existing_hit_to_miss@10": 3397,
+      "hit@50": 1257,
+      "existing_miss_to_hit@50": 300,
+      "existing_hit_to_miss@50": 4853,
+      "hit@100": 1502,
+      "existing_miss_to_hit@100": 314,
+      "existing_hit_to_miss@100": 5520,
+      "hit@500": 1984,
+      "existing_miss_to_hit@500": 300,
+      "existing_hit_to_miss@500": 7396,
+      "mean_candidate_count": 1241.4002005426448
+    },
+    {
+      "source": "semid_code_family_history",
+      "hit@10": 941,
+      "existing_miss_to_hit@10": 139,
+      "existing_hit_to_miss@10": 3094,
+      "hit@50": 1796,
+      "existing_miss_to_hit@50": 251,
+      "existing_hit_to_miss@50": 4265,
+      "hit@100": 2300,
+      "existing_miss_to_hit@100": 293,
+      "existing_hit_to_miss@100": 4701,
+      "hit@500": 3317,
+      "existing_miss_to_hit@500": 422,
+      "existing_hit_to_miss@500": 6185,
+      "mean_candidate_count": 695.9026188510086
+    },
+    {
+      "source": "semid_code_brand_history",
+      "hit@10": 611,
+      "existing_miss_to_hit@10": 255,
+      "existing_hit_to_miss@10": 3540,
+      "hit@50": 966,
+      "existing_miss_to_hit@50": 272,
+      "existing_hit_to_miss@50": 5116,
+      "hit@100": 1094,
+      "existing_miss_to_hit@100": 254,
+      "existing_hit_to_miss@100": 5868,
+      "hit@500": 1454,
+      "existing_miss_to_hit@500": 150,
+      "existing_hit_to_miss@500": 7776,
+      "mean_candidate_count": 530.0552671935826
+    },
+    {
+      "source": "semid_category_brand_history",
+      "hit@10": 469,
+      "existing_miss_to_hit@10": 236,
+      "existing_hit_to_miss@10": 3663,
+      "hit@50": 759,
+      "existing_miss_to_hit@50": 256,
+      "existing_hit_to_miss@50": 5307,
+      "hit@100": 870,
+      "existing_miss_to_hit@100": 227,
+      "existing_hit_to_miss@100": 6065,
+      "hit@500": 1197,
+      "existing_miss_to_hit@500": 175,
+      "existing_hit_to_miss@500": 8058,
+      "mean_candidate_count": 346.8564940427038
+    }
+  ],
+  "bucket_stats": {
+    "category": {
+      "n_buckets": 1236,
+      "mean_bucket_size": 238.05339805825244,
+      "max_bucket_size": 8913
+    },
+    "brand": {
+      "n_buckets": 5011,
+      "mean_bucket_size": 38.18239872280982,
+      "max_bucket_size": 8778
+    },
+    "code_family": {
+      "n_buckets": 13,
+      "mean_bucket_size": 15443.384615384615,
+      "max_bucket_size": 46087
+    },
+    "category_brand": {
+      "n_buckets": 17110,
+      "mean_bucket_size": 11.182466393921683,
+      "max_bucket_size": 1734
+    },
+    "code_brand": {
+      "n_buckets": 7351,
+      "mean_bucket_size": 18.343354645626444,
+      "max_bucket_size": 3418
+    }
+  }
+}
